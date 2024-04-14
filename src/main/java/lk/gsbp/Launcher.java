@@ -1,4 +1,4 @@
-package lk.gsbp.repository;
+package lk.gsbp;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

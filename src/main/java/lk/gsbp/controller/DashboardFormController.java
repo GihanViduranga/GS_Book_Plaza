@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -11,24 +13,37 @@ import java.awt.*;
 import java.io.IOException;
 
 public class DashboardFormController {
+    public Label lblCustomerCount;
+    public Label lblOrderCount;
+    public BarChart chrOrderProgress;
     @FXML
     private AnchorPane rootNode;
 
-    @FXML
-    private Label lblCustomarCount;
+    public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/customer_form.fxml"));
+        Stage stage = (Stage) rootNode.getScene().getWindow();
 
-    @FXML
-    private Label lblOrderCount;
-    public void btnCustomerOnAction(ActionEvent actionEvent) {
-        
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Customer Management Form");
+        stage.centerOnScreen();
     }
 
-    public void btnEmployeeOnAction(ActionEvent actionEvent) {
-        
+    public void btnEmployeeOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/employee_form.fxml"));
+        Stage stage = (Stage) rootNode.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Employee Management Form");
+        stage.centerOnScreen();
     }
 
-    public void btnItemOnAction(ActionEvent actionEvent) {
-        
+    public void btnItemOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/item_form.fxml"));
+        Stage stage = (Stage) rootNode.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Item Management Form");
+        stage.centerOnScreen();
     }
 
     public void btnStockeOnAction(ActionEvent actionEvent) {
@@ -38,7 +53,9 @@ public class DashboardFormController {
     public void btnSupplierOnAction(ActionEvent actionEvent) {
 
     }
+    public void btnDeliveryOnAction(ActionEvent actionEvent) {
 
+    }
     public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
         AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/View/Login_form.fxml"));
 
@@ -48,10 +65,6 @@ public class DashboardFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setTitle("GS Book Plaza Login");
-
-    }
-
-    public void btnDeliveryOnAction(ActionEvent actionEvent) {
 
     }
 }
