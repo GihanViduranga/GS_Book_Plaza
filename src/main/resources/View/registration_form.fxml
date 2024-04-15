@@ -4,7 +4,6 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,34 +11,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="620.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.RegistrationForm">
+<AnchorPane prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.RegistrationForm">
    <children>
-      <ImageView fitHeight="718.0" fitWidth="1060.0" layoutX="-545.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="651.0" fitWidth="1192.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/istockphoto-1386193712-612x612.jpg" />
+            <Image url="@../Icons/pexels-johannes-plenio-1103970.jpg" />
          </image>
-         <effect>
-            <GaussianBlur />
-         </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="511.0" layoutX="51.0" layoutY="55.0" opacity="0.74" stroke="WHITE" strokeType="INSIDE" width="414.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a3d62" height="511.0" layoutX="281.0" layoutY="70.0" opacity="0.58" stroke="#0a3d62" strokeType="INSIDE" width="414.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <TextField fx:id="txtUserId" layoutX="106.0" layoutY="219.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID" />
-      <Text layoutX="131.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar To GS Book Plaza">
+      <TextField fx:id="txtUserId" layoutX="336.0" layoutY="234.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID" />
+      <Text fill="WHITE" layoutX="361.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar To GS Book Plaza">
          <font>
             <Font name="Segoe UI Emoji" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="106.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" />
-      <TextField fx:id="txtUsername" layoutX="106.0" layoutY="289.0" prefHeight="32.0" prefWidth="304.0" promptText="Username" />
-      <Text layoutX="106.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text layoutX="106.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <PasswordField fx:id="txtPassword" layoutX="106.0" layoutY="364.0" prefHeight="32.0" prefWidth="304.0" promptText="Password" />
-      <Button layoutX="176.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #3c6382;" text="Registar" textFill="WHITE">
+      <Text fill="WHITE" layoutX="336.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" />
+      <TextField fx:id="txtUsername" layoutX="336.0" layoutY="304.0" prefHeight="32.0" prefWidth="304.0" promptText="Username" />
+      <Text fill="WHITE" layoutX="336.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text fill="WHITE" layoutX="336.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <PasswordField fx:id="txtPassword" layoutX="336.0" layoutY="379.0" prefHeight="32.0" prefWidth="304.0" promptText="Password" />
+      <Button layoutX="406.0" layoutY="454.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #3c6382;" text="Registar" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>

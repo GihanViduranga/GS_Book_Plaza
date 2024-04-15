@@ -46,14 +46,22 @@ public class DashboardFormController {
         stage.centerOnScreen();
     }
 
-    public void btnStockeOnAction(ActionEvent actionEvent) {
-        
+    public void btnStockOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/stock_form.fxml"));
+        Stage stage = (Stage) rootNode.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Item Management Form");
+        stage.centerOnScreen();
     }
 
     public void btnSupplierOnAction(ActionEvent actionEvent) {
 
     }
     public void btnDeliveryOnAction(ActionEvent actionEvent) {
+
+    }
+    public void btnPayamentOnAction(ActionEvent actionEvent) {
 
     }
     public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
