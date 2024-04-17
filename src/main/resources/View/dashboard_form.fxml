@@ -18,9 +18,9 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="503.0" prefWidth="1163.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.DashboardFormController">
    <children>
-      <ImageView fitHeight="728.0" fitWidth="1379.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="779.0" fitWidth="1253.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/pexels-pixabay-531880.jpg" />
+            <Image url="@../Icons/pexels-tirachard-kumtanom-733857.jpg" />
          </image>
       </ImageView>
       <Text layoutX="541.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="GS Book Plaza Dashboard" textAlignment="CENTER">
@@ -85,7 +85,7 @@
             <Image url="@../Icons/icons8-management-100.png" />
          </image>
       </ImageView>
-      <Button layoutX="75.0" layoutY="664.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="147.0" style="-fx-background-color: #1e3799;" text="Log out">
+      <Button layoutX="75.0" layoutY="664.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="147.0" style="-fx-background-color: #4a69bd;" text="Log out">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

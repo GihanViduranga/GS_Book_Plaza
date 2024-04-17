@@ -17,20 +17,20 @@
 
 <AnchorPane fx:id="root" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.CustomerFormController">
    <children>
-      <ImageView fitHeight="562.0" fitWidth="978.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="559.0" fitWidth="990.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/50-Beautiful-and-Minimalist-Presentation-Backgrounds-018.jpg" />
+            <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="311.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Management" underline="true">
+      <Text layoutX="317.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Management" underline="true">
          <font>
             <Font name="Gabriola" size="49.0" />
          </font>
          <fill>
             <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0" startX="1.0">
                <stops>
-                  <Stop color="#0c2461" />
-                  <Stop color="#74b9ff" offset="1.0" />
+                  <Stop color="WHITE" />
+                  <Stop color="#82ccdd" offset="1.0" />
                </stops>
             </LinearGradient>
          </fill>
@@ -38,7 +38,7 @@
             <DropShadow height="16.43" radius="6.5725" width="11.86" />
          </effect>
       </Text>
-      <TextField fx:id="lblCustomerId" layoutX="91.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" style="-fx-background-color: #74b9ff;">
+      <TextField fx:id="txtCustomerId" layoutX="91.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" promptText="Customer ID">
          <effect>
             <DropShadow />
          </effect>
@@ -50,63 +50,62 @@
          </cursor>
       </TextField>
       <Text fill="WHITE" layoutX="91.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID" />
-      <TextField fx:id="lblCustomerAddress" layoutX="91.0" layoutY="194.0" prefHeight="25.0" prefWidth="287.0" style="-fx-background-color: #74b9ff;">
+      <TextField fx:id="txtCustomerAddress" layoutX="91.0" layoutY="194.0" prefHeight="25.0" prefWidth="287.0" promptText="Customer Address">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
       <Text fill="WHITE" layoutX="91.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Address" />
       <Text fill="WHITE" layoutX="548.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Contact" />
-      <TextField fx:id="lblCustomerContact" layoutX="548.0" layoutY="194.0" prefHeight="25.0" prefWidth="287.0" style="-fx-background-color: #74b9ff;">
+      <TextField fx:id="txtCustomerContact" layoutX="548.0" layoutY="194.0" prefHeight="25.0" prefWidth="287.0" promptText="Customer Contact">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <TextField fx:id="lblCustomerName" layoutX="548.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" style="-fx-background-color: #74b9ff;">
+      <TextField fx:id="txtCustomerName" layoutX="548.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" promptText="Customer Name">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
       <Text fill="WHITE" layoutX="548.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name" />
       <Text fill="WHITE" layoutX="91.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Email" />
-      <TextField fx:id="lblCustomerEmail" layoutX="91.0" layoutY="267.0" prefHeight="25.0" prefWidth="287.0" style="-fx-background-color: #74b9ff;">
+      <TextField fx:id="txtCustomerEmail" layoutX="91.0" layoutY="267.0" prefHeight="25.0" prefWidth="287.0" promptText="Customer Email">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="241.0" onAction="#btnCusSaveOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #4a69bd;" text="Save" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="241.0" onAction="#btnCusSaveOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="241.0" onAction="#btnCusClearOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #4a69bd;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="241.0" onAction="#btnCusClearOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="280.0" onAction="#btnCusUpdateOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #4a69bd;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="280.0" onAction="#btnCusUpdateOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="280.0" onAction="#btnCusDeleteOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #4a69bd;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="280.0" onAction="#btnCusDeleteOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
       </JFXButton>
       <TableView layoutX="91.0" layoutY="325.0" prefHeight="200.0" prefWidth="744.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="Customer ID" />
-          <TableColumn prefWidth="208.0" text="Customer Name" />
-            <TableColumn minWidth="0.0" prefWidth="171.0" text="Customer Address" />
-            <TableColumn minWidth="0.0" prefWidth="133.0" text="Customer Contact" />
-            <TableColumn minWidth="0.0" prefWidth="131.0" text="Customer Email" />
+          <TableColumn fx:id="colCustomerName" prefWidth="199.0" text="Customer Name" />
+            <TableColumn fx:id="colCustomerAddress" minWidth="0.0" prefWidth="233.0" text="Customer Address" />
+            <TableColumn fx:id="colCustomerContact" minWidth="0.0" prefWidth="139.0" text="Customer Contact" />
+            <TableColumn fx:id="colCustomerEmail" minWidth="0.0" prefWidth="172.0" text="Customer Email" />
         </columns>
          <effect>
             <DropShadow />
          </effect>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="852.0" layoutY="497.0" onAction="#btnCusBackOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #4a69bd;" text="Back" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="852.0" layoutY="497.0" onAction="#btnCusBackOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>

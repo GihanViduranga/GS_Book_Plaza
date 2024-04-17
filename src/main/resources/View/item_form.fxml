@@ -1,16 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="ItemRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.ItemFormController">
    <children>
-      <Text layoutX="377.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Management">
+      <ImageView fitHeight="567.0" fitWidth="992.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="358.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Management" underline="true">
          <font>
-            <Font name="HoloLens MDL2 Assets" size="24.0" />
+            <Font name="Gabriola" size="49.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.0619047619047619">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#82ccdd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <TextField fx:id="txtId" layoutX="144.0" layoutY="142.0" prefHeight="25.0" prefWidth="271.0" promptText="Item ID" />
+      <Text fill="WHITE" layoutX="144.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" />
+      <TextField fx:id="txtQTY" layoutX="144.0" layoutY="204.0" prefHeight="25.0" prefWidth="271.0" promptText="Qentity On Hand" />
+      <Text fill="WHITE" layoutX="144.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qentity On Hand" />
+      <TextField fx:id="txtName" layoutX="583.0" layoutY="142.0" prefHeight="25.0" prefWidth="271.0" promptText="Name" />
+      <Text fill="WHITE" layoutX="583.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <TextField fx:id="txtPrice" layoutX="583.0" layoutY="204.0" prefHeight="25.0" prefWidth="271.0" promptText="Unit Price" />
+      <Text fill="WHITE" layoutX="583.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" />
+      <JFXButton buttonType="RAISED" layoutX="583.0" layoutY="244.0" onAction="#btnSearchOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Search" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="244.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE" />
+      <TableView layoutX="136.0" layoutY="279.0" prefHeight="262.0" prefWidth="559.0">
+        <columns>
+          <TableColumn fx:id="tblID" prefWidth="105.0" text="Item ID" />
+          <TableColumn fx:id="tblName" prefWidth="213.0" text="Name" />
+            <TableColumn fx:id="tblQTY" prefWidth="103.0" text="Qentity On Hand" />
+            <TableColumn fx:id="tblUnitPrice" prefWidth="137.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="711.0" layoutY="279.0" onAction="#btnAddToCartOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #f39c12;" text="Add To Cart" textAlignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-cart-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Text fill="#f39c12" layoutX="711.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount" underline="true">
+         <font>
+            <Font name="Impact" size="36.0" />
          </font>
       </Text>
+      <Label fx:id="lblTotalPrice" layoutX="794.0" layoutY="410.0" textFill="#f39c12" underline="true" />
+      <JFXButton buttonType="RAISED" layoutX="711.0" layoutY="509.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>

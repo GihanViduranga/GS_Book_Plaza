@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="EmployeeRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.EmployeeFormController">
    <children>
-      <Text layoutX="349.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Management" underline="true">
+      <ImageView fitHeight="571.0" fitWidth="999.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="323.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Management" underline="true">
          <font>
-            <Font name="Ebrima" size="24.0" />
+            <Font name="Gabriola" size="49.0" />
          </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.14285714285714285">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#82ccdd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <DropShadow />
+         </effect>
       </Text>
+      <TextField fx:id="txtID" layoutX="131.0" layoutY="104.0" prefHeight="25.0" prefWidth="287.0" promptText="Employee ID">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="131.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID" />
+      <TextField fx:id="txtAddress" layoutX="131.0" layoutY="167.0" prefHeight="25.0" prefWidth="287.0" promptText="Address">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="131.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <TextField fx:id="txtJobStartDate" layoutX="131.0" layoutY="234.0" prefHeight="25.0" prefWidth="287.0" promptText="Job Start Date">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="131.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Start Date" />
+      <TextField fx:id="txtName" layoutX="568.0" layoutY="107.0" prefHeight="25.0" prefWidth="287.0" promptText="Name">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="568.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <TextField fx:id="txtContact" layoutX="568.0" layoutY="171.0" prefHeight="25.0" prefWidth="287.0" promptText="Contact">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="568.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" />
+      <TextField fx:id="txtSalary" layoutX="568.0" layoutY="238.0" prefHeight="25.0" prefWidth="287.0" promptText="Salary">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="568.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary" />
+      <TextField fx:id="txtPosition" layoutX="131.0" layoutY="299.0" prefHeight="25.0" prefWidth="287.0" promptText="Position">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Text fill="WHITE" layoutX="131.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" />
+      <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="273.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="272.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="312.0" onAction="#btnUpdateOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="312.0" onAction="#btnDeleteOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE" />
+      <TableView layoutX="132.0" layoutY="340.0" prefHeight="200.0" prefWidth="723.0">
+        <columns>
+          <TableColumn fx:id="tblName" prefWidth="141.0" text="Name" />
+          <TableColumn fx:id="tblAddress" prefWidth="141.0" text="Address" />
+            <TableColumn fx:id="tblContact" prefWidth="107.0" text="Contact" />
+            <TableColumn fx:id="tblStartDate" prefWidth="113.0" text="Start Date" />
+            <TableColumn fx:id="tblSalary" prefWidth="104.0" text="Salary" />
+            <TableColumn fx:id="tblPosition" prefWidth="116.0" text="Position" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="864.0" layoutY="515.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>
