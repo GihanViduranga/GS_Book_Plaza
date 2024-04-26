@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.OrderFormController">
+   <children>
+      <ImageView fitHeight="595.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </ImageView>
+      <Text layoutX="346.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Management" underline="true">
+         <font>
+            <Font name="Gabriola" size="49.0" />
+         </font>
+         <fill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#82ccdd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <DropShadow height="16.43" radius="6.5725" width="11.86" />
+         </effect>
+      </Text>
+      <Text fill="WHITE" layoutX="78.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="78.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="412.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <JFXButton buttonType="RAISED" layoutX="774.0" layoutY="328.0" onAction="#btnAddToCartOnAction" prefHeight="40.0" prefWidth="232.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Add To Cart" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-add-to-cart-64%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView layoutX="78.0" layoutY="328.0" prefHeight="200.0" prefWidth="683.0">
+         <columns>
+            <TableColumn fx:id="colItemID" minWidth="0.0" prefWidth="83.0" text="Item ID" />
+            <TableColumn fx:id="colItemName" minWidth="0.0" prefWidth="200.0" text="Item Name" />
+            <TableColumn fx:id="colUnitPrice" minWidth="0.0" prefWidth="111.0" text="Unit Price" />
+            <TableColumn fx:id="colQTY" minWidth="0.0" prefWidth="61.0" text="QTY" />
+            <TableColumn fx:id="colTotalPrice" minWidth="0.0" prefWidth="113.0" text="Total Amount" />
+            <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="113.0" text="Action" />
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="834.0" layoutY="499.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-back-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="573.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Date">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <TextField fx:id="txtDeliveryId" layoutX="707.0" layoutY="113.0" prefHeight="25.0" prefWidth="232.0" promptText="Delivery ID">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Text fill="WHITE" layoutX="707.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery ID" />
+      <JFXButton buttonType="RAISED" layoutX="774.0" layoutY="397.0" onAction="#btnPlaceOrderOnAction" prefHeight="40.0" prefWidth="232.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Place Order" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-create-order-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbCustomerID" layoutX="78.0" layoutY="111.0" onAction="#cmbCustomerIdOnAction" prefHeight="25.0" prefWidth="232.0" promptText="Customer ID" style="-jfx-unfocus-color: #ecf0f1; -jfx-focus-color: #ecf0f1;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <JFXButton buttonType="RAISED" layoutX="320.0" layoutY="111.0" onAction="#btnAddNewCustomerOnAction" prefHeight="29.0" prefWidth="70.0" style="-fx-background-color: #2ecc71;" text="New">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-add-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblOrderID" layoutX="412.0" layoutY="115.0" prefHeight="17.0" prefWidth="0.0" />
+      <Label fx:id="lblOrderDate" layoutX="573.0" layoutY="117.0" />
+      <Label fx:id="lblCustomerName" layoutX="78.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
+      <Text fill="WHITE" layoutX="461.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name" wrappingWidth="70.25393772125244">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblItemName" layoutX="461.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
+      <Text fill="WHITE" layoutX="602.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" wrappingWidth="70.25393772125244">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="703.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quentity On Hand" wrappingWidth="111.99999940395355">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblUnitPrice" layoutX="604.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
+      <Label fx:id="lblQuentityOnHand" layoutX="707.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
+      <Text fill="WHITE" layoutX="859.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" wrappingWidth="27.999999403953552">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtQTY" layoutX="853.0" layoutY="229.0" prefHeight="29.0" prefWidth="40.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Text fill="WHITE" layoutX="275.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" wrappingWidth="70.25393772125244">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbItemID" layoutX="276.0" layoutY="231.0" onAction="#cmbCustomerIdOnAction" prefHeight="25.0" prefWidth="140.0" promptText="Item ID" style="-jfx-unfocus-color: #ecf0f1; -jfx-focus-color: #ecf0f1;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fill="WHITE" layoutX="531.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Total =" wrappingWidth="99.25393772125244">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblNetTotal" layoutX="635.0" layoutY="543.0" prefHeight="17.0" prefWidth="0.0" />
+   </children>
+</AnchorPane>

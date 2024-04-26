@@ -1,20 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="StockRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.StockFormController">
    <children>
-      <Text layoutX="366.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Management" underline="true">
+      <ImageView fitHeight="560.0" fitWidth="997.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </ImageView>
+      <Text layoutX="353.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stocke Management" underline="true">
          <font>
-            <Font name="MS PGothic" size="24.0" />
+            <Font name="Gabriola" size="49.0" />
          </font>
          <effect>
             <DropShadow />
          </effect>
+         <fill>
+            <LinearGradient endX="0.014285714285714235" endY="0.7285714285714286">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#82ccdd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
       </Text>
+      <TextField fx:id="txtStokeId" layoutX="125.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" promptText="Stocke ID">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtCatogaryName" layoutX="125.0" layoutY="195.0" prefHeight="25.0" prefWidth="287.0" promptText="Catogary Name">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtQTY" layoutX="567.0" layoutY="195.0" prefHeight="25.0" prefWidth="287.0" promptText="QTY">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <Text fill="WHITE" layoutX="125.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stocke ID" />
+      <Text fill="WHITE" layoutX="125.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catogary Name" />
+      <Text fill="WHITE" layoutX="567.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" />
+      <JFXButton layoutX="567.0" layoutY="246.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-save-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="742.0" layoutY="246.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-clear-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="567.0" layoutY="284.0" onAction="#btnUpdateOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-update-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="742.0" layoutY="284.0" onAction="#btnDeleteOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-delete-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView layoutX="236.0" layoutY="321.0" prefHeight="200.0" prefWidth="537.0">
+        <columns>
+            <TableColumn fx:id="tblCostPrice" prefWidth="82.0" text="Stoke ID" />
+          <TableColumn fx:id="tblQTY" prefWidth="169.0" text="Item Name" />
+          <TableColumn fx:id="tblCatagoryName" prefWidth="177.0" text="Catogary Name" />
+            <TableColumn fx:id="tblSellingPrice" prefWidth="109.0" text="QTY" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="828.0" layoutY="496.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-back-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField fx:id="txtItemName" layoutX="567.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" promptText="Item Name">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <Text fill="WHITE" layoutX="567.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name" />
    </children>
 </AnchorPane>

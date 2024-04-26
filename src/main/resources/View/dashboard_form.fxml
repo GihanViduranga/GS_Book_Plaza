@@ -20,10 +20,10 @@
    <children>
       <ImageView fitHeight="779.0" fitWidth="1253.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/pexels-tirachard-kumtanom-733857.jpg" />
+            <Image url="@../Icons/Abstract-Blue-Background-Graphics-23743402-1-580x386.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="541.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="GS Book Plaza Dashboard" textAlignment="CENTER">
+      <Text layoutX="382.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="GS Book Plaza Dashboard" textAlignment="CENTER">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.29999999999999993">
                <stops>
@@ -35,64 +35,64 @@
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" height="71.775625" radius="36.03640625" width="74.37" />
          </effect></Text>
-      <Button layoutX="39.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="            Customer Management" textAlignment="RIGHT">
+      <Button layoutX="40.0" layoutY="168.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="            Customer Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="39.0" layoutY="141.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 14;" text="              Employee Management" textAlignment="RIGHT">
+      <Button layoutX="39.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 14;" text="              Employee Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="39.0" layoutY="229.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="     Item Management" textAlignment="RIGHT">
+      <Button layoutX="40.0" layoutY="282.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="     Item Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="46.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="47.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-item-100.png" />
+            <Image url="@../Icons/icons8-item-96.png" />
          </image>
       </ImageView>
-      <Button layoutX="39.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnStockOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="          Stock Management" textAlignment="RIGHT">
+      <Button layoutX="40.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnStockOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="          Stock Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="43.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="47.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-warehouse-80.png" />
+            <Image url="@../Icons/icons8-warehouse-100.png" />
          </image>
       </ImageView>
-      <Button layoutX="39.0" layoutY="492.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="          Supplier Management" textAlignment="RIGHT">
+      <Button layoutX="40.0" layoutY="451.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="          Supplier Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="43.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="47.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-supplies-100.png" />
+            <Image url="@../Icons/icons8-supplier-100.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="43.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="46.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-manager-80.png" />
+            <Image url="@../Icons/icons8-employee-100.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="46.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="47.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-management-100.png" />
+            <Image url="@../Icons/icons8-customer-96.png" />
          </image>
       </ImageView>
-      <Button layoutX="75.0" layoutY="664.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="147.0" style="-fx-background-color: #4a69bd;" text="Log out">
+      <Button layoutX="75.0" layoutY="684.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="147.0" style="-fx-background-color: #4a69bd;" text="Log out">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="78.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="86.0" layoutY="690.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-logout-64.png" />
+            <Image url="@../Icons/icons8-log-out-48.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6a89cc" height="183.0" layoutX="380.0" layoutY="138.0" stroke="#6a89cc" strokeType="INSIDE" width="303.0">
@@ -129,14 +129,14 @@
                </input>
             </DropShadow>
          </effect></Text>
-      <Button layoutX="39.0" layoutY="578.0" mnemonicParsing="false" onAction="#btnDeliveryOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="           Delivery Management" textAlignment="RIGHT">
+      <Button layoutX="40.0" layoutY="508.0" mnemonicParsing="false" onAction="#btnDeliveryOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="           Delivery Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="44.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="47.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-trolley-100.png" />
+            <Image url="@../Icons/icons8-delivery-96.png" />
          </image>
       </ImageView>
       <Label fx:id="lblCustomerCount" layoutX="518.0" layoutY="259.0" />
@@ -146,18 +146,41 @@
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis side="LEFT">
+               <effect>
+                  <DropShadow />
+               </effect></NumberAxis>
         </yAxis>
       </BarChart>
       <Text fill="WHITE" layoutX="655.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="Order Progerss" />
-      <Button layoutX="39.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnPayamentOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="             Payment Management" textAlignment="RIGHT">
+      <Button layoutX="39.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnPayamentOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="             Payment Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="45.0" fitWidth="47.0" layoutX="43.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="47.0" layoutX="44.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/icons8-payment-100.png" />
+            <Image url="@../Icons/icons8-payment-96.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="40.0" layoutY="566.0" mnemonicParsing="false" onAction="#btnOrdersOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="           Orders Management" textAlignment="RIGHT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="47.0" layoutY="569.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/icons8-logistics-32.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="84.0" layoutX="400.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/icons8-add-male-user-group-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="84.0" layoutX="776.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/icons8-purchase-order-96.png" />
          </image>
       </ImageView>
    </children>

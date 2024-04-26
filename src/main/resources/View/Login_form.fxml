@@ -6,9 +6,12 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -17,25 +20,39 @@
    <children>
       <ImageView fitHeight="698.0" fitWidth="985.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/pexels-johannes-plenio-1103970.jpg" />
+            <Image url="@../Icons/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMTYtYy0wMi1rc2g2cWt1Zy5qcGc.jpg" />
          </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a3d62" height="541.0" layoutX="267.0" layoutY="40.0" opacity="0.58" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23699a" height="541.0" layoutX="267.0" layoutY="40.0" opacity="0.2" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <Text fill="WHITE" layoutX="370.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GS Book Plaza" textAlignment="CENTER" underline="true">
+      <Text layoutX="366.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GS Book Plaza" textAlignment="CENTER" underline="true" wrappingWidth="218.74462890625">
          <font>
-            <Font name="Courier New Bold" size="27.0" />
+            <Font name="Gabriola" size="48.0" />
          </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="0.047619047619047616" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#0c2461" />
+                  <Stop color="#82ccdd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <DropShadow />
+         </effect>
       </Text>
       <Text fill="WHITE" layoutX="320.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id" />
       <Text fill="WHITE" layoutX="320.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
       <PasswordField fx:id="txtPassword" layoutX="320.0" layoutY="303.0" prefHeight="25.0" prefWidth="311.0" promptText="Password" />
-      <Button layoutX="384.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="32.0" prefWidth="182.0" style="-fx-background-color: #60a3bc; -fx-background-radius: #60a3bc;" text="Login">
+      <Button layoutX="384.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #fa983a; -fx-background-radius: #60a3bc;" text="Login" textFill="WHITE">
          <font>
-            <Font name="Franklin Gothic Medium Italic" size="15.0" />
+            <Font name="Consolas Italic" size="22.0" />
          </font>
          <effect>
             <DropShadow />
@@ -45,7 +62,18 @@
          </cursor>
       </Button>
       <TextField fx:id="txtUsername" layoutX="320.0" layoutY="228.0" prefHeight="25.0" prefWidth="311.0" promptText="User Id" />
-      <Text fill="WHITE" layoutX="384.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an Account?" wrappingWidth="126.625" />
-      <Hyperlink layoutX="514.0" layoutY="441.0" onAction="#linkRegistrationOnAction" text="Register" />
+      <Text fill="WHITE" layoutX="375.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an Account?" wrappingWidth="152.625">
+         <font>
+            <Font size="13.0" />
+         </font></Text>
+      <Hyperlink layoutX="519.0" layoutY="467.0" onAction="#linkRegistrationOnAction" text="Register">
+         <font>
+            <Font size="13.0" />
+         </font></Hyperlink>
+      <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="392.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/icons8-login-96.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

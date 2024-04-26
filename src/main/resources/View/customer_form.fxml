@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,6 +22,9 @@
          <image>
             <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </ImageView>
       <Text layoutX="317.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Management" underline="true">
          <font>
@@ -78,21 +82,45 @@
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
       </JFXButton>
       <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="241.0" onAction="#btnCusClearOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
       </JFXButton>
       <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="280.0" onAction="#btnCusUpdateOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
       </JFXButton>
       <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="280.0" onAction="#btnCusDeleteOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
       </JFXButton>
       <TableView layoutX="91.0" layoutY="325.0" prefHeight="200.0" prefWidth="744.0">
         <columns>
@@ -109,6 +137,12 @@
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
       </JFXButton>
    </children>
 </AnchorPane>

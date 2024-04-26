@@ -1,9 +1,14 @@
 package lk.gsbp.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ItemFormController {
 
@@ -25,11 +30,12 @@ public class ItemFormController {
 
     }
 
-    public void btnAddToCartOnAction(ActionEvent actionEvent) {
+    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/View/dashboard_form.fxml"));
+        Stage stage = (Stage) ItemRoot.getScene().getWindow();
 
-    }
-
-    public void btnBackOnAction(ActionEvent actionEvent) {
-
+        stage.setScene(new Scene(rootNode));
+        stage.setTitle("Gs Book Plaza Dashboard");
+        stage.centerOnScreen();
     }
 }

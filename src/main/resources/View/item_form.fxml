@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,10 +17,17 @@
 
 <AnchorPane fx:id="ItemRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.ItemFormController">
    <children>
-      <ImageView fitHeight="567.0" fitWidth="992.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="567.0" fitWidth="992.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
+         <effect>
+            <DropShadow>
+               <input>
+                  <GaussianBlur />
+               </input>
+            </DropShadow>
+         </effect>
       </ImageView>
       <Text layoutX="358.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Management" underline="true">
          <font>
@@ -37,39 +45,61 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtId" layoutX="144.0" layoutY="142.0" prefHeight="25.0" prefWidth="271.0" promptText="Item ID" />
-      <Text fill="WHITE" layoutX="144.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" />
-      <TextField fx:id="txtQTY" layoutX="144.0" layoutY="204.0" prefHeight="25.0" prefWidth="271.0" promptText="Qentity On Hand" />
-      <Text fill="WHITE" layoutX="144.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qentity On Hand" />
-      <TextField fx:id="txtName" layoutX="583.0" layoutY="142.0" prefHeight="25.0" prefWidth="271.0" promptText="Name" />
-      <Text fill="WHITE" layoutX="583.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <TextField fx:id="txtPrice" layoutX="583.0" layoutY="204.0" prefHeight="25.0" prefWidth="271.0" promptText="Unit Price" />
-      <Text fill="WHITE" layoutX="583.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" />
-      <JFXButton buttonType="RAISED" layoutX="583.0" layoutY="244.0" onAction="#btnSearchOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Search" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="244.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE" />
-      <TableView layoutX="136.0" layoutY="279.0" prefHeight="262.0" prefWidth="559.0">
-        <columns>
-          <TableColumn fx:id="tblID" prefWidth="105.0" text="Item ID" />
-          <TableColumn fx:id="tblName" prefWidth="213.0" text="Name" />
-            <TableColumn fx:id="tblQTY" prefWidth="103.0" text="Qentity On Hand" />
-            <TableColumn fx:id="tblUnitPrice" prefWidth="137.0" text="Unit Price" />
-        </columns>
-      </TableView>
-      <JFXButton buttonType="RAISED" layoutX="711.0" layoutY="279.0" onAction="#btnAddToCartOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #f39c12;" text="Add To Cart" textAlignment="CENTER">
+      <TextField fx:id="txtId" layoutX="142.0" layoutY="103.0" prefHeight="25.0" prefWidth="271.0" promptText="Item ID" />
+      <Text fill="WHITE" layoutX="142.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <TextField fx:id="txtQTY" layoutX="581.0" layoutY="164.0" prefHeight="25.0" prefWidth="271.0" promptText="QTY" />
+      <Text fill="WHITE" layoutX="581.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <TextField fx:id="txtName" layoutX="142.0" layoutY="165.0" prefHeight="25.0" prefWidth="271.0" promptText="Name" />
+      <Text fill="WHITE" layoutX="142.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <TextField fx:id="txtPrice" layoutX="581.0" layoutY="103.0" prefHeight="25.0" prefWidth="271.0" promptText="Unit Price" />
+      <Text fill="WHITE" layoutX="581.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <JFXButton buttonType="RAISED" layoutX="580.0" layoutY="208.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
          <graphic>
-            <ImageView fitHeight="52.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/icons8-cart-48.png" />
+                  <Image url="@../Icons/icons8-clear-96.png" />
                </image>
             </ImageView>
          </graphic>
-      </JFXButton>
-      <Text fill="#f39c12" layoutX="711.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount" underline="true">
          <font>
-            <Font name="Impact" size="36.0" />
-         </font>
-      </Text>
-      <Label fx:id="lblTotalPrice" layoutX="794.0" layoutY="410.0" textFill="#f39c12" underline="true" />
-      <JFXButton buttonType="RAISED" layoutX="711.0" layoutY="509.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE" />
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <TableView layoutX="221.0" layoutY="268.0" prefHeight="262.0" prefWidth="550.0">
+        <columns>
+          <TableColumn fx:id="tblID" prefWidth="86.0" text="Item ID" />
+          <TableColumn fx:id="tblName" prefWidth="213.0" text="Name" />
+            <TableColumn fx:id="tblQTY" prefWidth="127.0" text="QTY" />
+            <TableColumn fx:id="tblUnitPrice" prefWidth="126.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="740.0" layoutY="208.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-back-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
    </children>
 </AnchorPane>

@@ -75,4 +75,8 @@ public class DashboardFormController {
         stage.setTitle("GS Book Plaza Login");
 
     }
+
+    public void btnOrdersOnAction(ActionEvent actionEvent) {
+
+    }
 }

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -15,29 +19,72 @@
    <children>
       <ImageView fitHeight="651.0" fitWidth="1192.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/pexels-johannes-plenio-1103970.jpg" />
+            <Image url="@../Icons/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMTYtYy0wMi1rc2g2cWt1Zy5qcGc.jpg" />
          </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a3d62" height="511.0" layoutX="281.0" layoutY="70.0" opacity="0.58" stroke="#0a3d62" strokeType="INSIDE" width="414.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23699a" height="541.0" layoutX="281.0" layoutY="55.0" opacity="0.2" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <TextField fx:id="txtUserId" layoutX="336.0" layoutY="234.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID" />
-      <Text fill="WHITE" layoutX="361.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar To GS Book Plaza">
-         <font>
-            <Font name="Segoe UI Emoji" size="22.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="336.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" />
-      <TextField fx:id="txtUsername" layoutX="336.0" layoutY="304.0" prefHeight="32.0" prefWidth="304.0" promptText="Username" />
-      <Text fill="WHITE" layoutX="336.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text fill="WHITE" layoutX="336.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <PasswordField fx:id="txtPassword" layoutX="336.0" layoutY="379.0" prefHeight="32.0" prefWidth="304.0" promptText="Password" />
-      <Button layoutX="406.0" layoutY="454.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #3c6382;" text="Registar" textFill="WHITE">
+      <TextField fx:id="txtUserId" layoutX="336.0" layoutY="234.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID">
          <effect>
             <DropShadow />
          </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Text layoutX="319.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar To GS Book Plaza" underline="true">
+         <font>
+            <Font name="Gabriola" size="42.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="0.042857142857142816" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#0c2461" />
+                  <Stop color="#82ccdd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <Text fill="WHITE" layoutX="336.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" />
+      <TextField fx:id="txtUsername" layoutX="336.0" layoutY="304.0" prefHeight="32.0" prefWidth="304.0" promptText="Username">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Text fill="WHITE" layoutX="336.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text fill="WHITE" layoutX="336.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <PasswordField fx:id="txtPassword" layoutX="336.0" layoutY="379.0" prefHeight="32.0" prefWidth="304.0" promptText="Password">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></PasswordField>
+      <Button layoutX="395.0" layoutY="454.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="48.0" prefWidth="187.0" style="-fx-background-color: #fa983a;" text="  Registar" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Consolas Italic" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
+      <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="399.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/icons8-register-100.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

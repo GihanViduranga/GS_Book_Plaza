@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,6 +21,9 @@
          <image>
             <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </ImageView>
       <Text layoutX="323.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Management" underline="true">
          <font>
@@ -71,10 +76,22 @@
             <DropShadow />
          </effect></TextField>
       <Text fill="WHITE" layoutX="131.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" />
-      <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="273.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="272.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="312.0" onAction="#btnUpdateOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="312.0" onAction="#btnDeleteOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="273.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="272.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="568.0" layoutY="312.0" onAction="#btnUpdateOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="312.0" onAction="#btnDeleteOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <TableView layoutX="132.0" layoutY="340.0" prefHeight="200.0" prefWidth="723.0">
         <columns>
           <TableColumn fx:id="tblName" prefWidth="141.0" text="Name" />
@@ -85,6 +102,9 @@
             <TableColumn fx:id="tblPosition" prefWidth="116.0" text="Position" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="864.0" layoutY="515.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="864.0" layoutY="515.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
    </children>
 </AnchorPane>
