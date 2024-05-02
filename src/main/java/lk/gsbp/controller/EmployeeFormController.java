@@ -27,6 +27,19 @@ public class EmployeeFormController {
     public TableColumn tblSalary;
     public TableColumn tblPosition;
 
+    public void initialize() {
+        setCellValueFactory();
+        loadAllCustomers();
+    }
+
+    private void setCellValueFactory() {
+
+    }
+
+    private void loadAllCustomers() {
+
+    }
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
 
     }

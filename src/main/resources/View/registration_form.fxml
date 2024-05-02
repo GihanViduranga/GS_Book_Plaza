@@ -53,7 +53,10 @@
             <DropShadow />
          </effect>
       </Text>
-      <Text fill="WHITE" layoutX="336.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" />
+      <Text fill="WHITE" layoutX="336.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
       <TextField fx:id="txtUsername" layoutX="336.0" layoutY="304.0" prefHeight="32.0" prefWidth="304.0" promptText="Username">
          <effect>
             <DropShadow />
@@ -61,8 +64,14 @@
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Text fill="WHITE" layoutX="336.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text fill="WHITE" layoutX="336.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <Text fill="WHITE" layoutX="336.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="336.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
       <PasswordField fx:id="txtPassword" layoutX="336.0" layoutY="379.0" prefHeight="32.0" prefWidth="304.0" promptText="Password">
          <effect>
             <DropShadow />
@@ -75,7 +84,7 @@
             <DropShadow />
          </effect>
          <font>
-            <Font name="Consolas Italic" size="22.0" />
+            <Font name="Arial Bold" size="22.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />

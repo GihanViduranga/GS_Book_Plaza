@@ -22,10 +22,6 @@ public class ItemFormController {
     public TableColumn tblQTY;
     public TableColumn tblUnitPrice;
 
-    public void btnSearchOnAction(ActionEvent actionEvent) {
-
-    }
-
     public void btnClearOnAction(ActionEvent actionEvent) {
 
     }

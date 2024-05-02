@@ -1,14 +1,15 @@
-package lk.gsbp.model;
+package lk.gsbp.model.tm;
 
+import lk.gsbp.model.Customer;
 import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
+@Getter
 @ToString
 @EqualsAndHashCode
-public class Customer {
+public class CustomerTm {
     private String CustomerId;
     private String Name;
     private String Address;

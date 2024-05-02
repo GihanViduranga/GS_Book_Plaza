@@ -8,10 +8,9 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class Customer {
-    private String CustomerId;
-    private String Name;
+public class Delivery {
+    private String DeliveryId;
+    private String Date;
     private String Address;
-    private String Contact;
-    private String Email;
+    private String Stetus;
 }

@@ -6,34 +6,32 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class StockFormController {
+public class SupplierFormController {
+
+    public AnchorPane SupplierRootNode;
+    @FXML
+    private TextField txtSupplierID;
 
     @FXML
-    private AnchorPane StockRoot;
+    private TextField txtSupplierName;
 
     @FXML
-    private TextField txtStokeId;
+    private TextField txtContact;
 
     @FXML
-    private TextField txtCatogaryName;
+    private TextField txtProduct;
 
     @FXML
-    private TextField txtQTY;
+    private TableColumn<?, ?> tblSupplierID;
 
     @FXML
-    private TableColumn<?, ?> tblCostPrice;
+    private TableColumn<?, ?> tblSupplierName;
 
     @FXML
-    private TableColumn<?, ?> tblQTY;
+    private TableColumn<?, ?> tblContact;
 
     @FXML
-    private TableColumn<?, ?> tblCatagoryName;
-
-    @FXML
-    private TableColumn<?, ?> tblSellingPrice;
-
-    @FXML
-    private TextField txtItemName;
+    private TableColumn<?, ?> tblProduct;
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
@@ -47,6 +45,11 @@ public class StockFormController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnNewOnAction(ActionEvent event) {
 
     }
 

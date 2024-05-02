@@ -56,10 +56,19 @@
             <DropShadow />
          </effect>
       </TextField>
-      <Text fill="WHITE" layoutX="125.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stocke ID" />
-      <Text fill="WHITE" layoutX="125.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catogary Name" />
-      <Text fill="WHITE" layoutX="567.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" />
-      <JFXButton layoutX="567.0" layoutY="246.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+      <Text fill="WHITE" layoutX="125.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stocke ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="125.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catogary Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="567.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <JFXButton buttonType="RAISED" layoutX="567.0" layoutY="246.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
@@ -73,6 +82,9 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
       <JFXButton layoutX="742.0" layoutY="246.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <effect>
@@ -88,6 +100,9 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
       <JFXButton layoutX="567.0" layoutY="284.0" onAction="#btnUpdateOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
          <effect>
@@ -103,6 +118,9 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
       <JFXButton layoutX="742.0" layoutY="284.0" onAction="#btnDeleteOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
          <effect>
@@ -118,6 +136,9 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
       <TableView layoutX="236.0" layoutY="321.0" prefHeight="200.0" prefWidth="537.0">
         <columns>
@@ -141,12 +162,18 @@
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
       <TextField fx:id="txtItemName" layoutX="567.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" promptText="Item Name">
          <effect>
             <DropShadow />
          </effect>
       </TextField>
-      <Text fill="WHITE" layoutX="567.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name" />
+      <Text fill="WHITE" layoutX="567.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
    </children>
 </AnchorPane>
