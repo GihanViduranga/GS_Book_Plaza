@@ -45,7 +45,7 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtId" layoutX="142.0" layoutY="103.0" prefHeight="25.0" prefWidth="271.0" promptText="Item ID" />
+      <TextField fx:id="txtId" layoutX="142.0" layoutY="103.0" onAction="#txtItemSearchOnAction" prefHeight="25.0" prefWidth="271.0" promptText="Item ID" />
       <Text fill="WHITE" layoutX="142.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -65,7 +65,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <JFXButton buttonType="RAISED" layoutX="580.0" layoutY="208.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="829.0" layoutY="387.0" onAction="#btnClearOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -79,7 +79,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <TableView layoutX="221.0" layoutY="268.0" prefHeight="262.0" prefWidth="550.0">
+      <TableView fx:id="tblItemTable" layoutX="221.0" layoutY="268.0" prefHeight="262.0" prefWidth="550.0">
         <columns>
           <TableColumn fx:id="tblID" prefWidth="86.0" text="Item ID" />
           <TableColumn fx:id="tblName" prefWidth="213.0" text="Name" />
@@ -87,7 +87,7 @@
             <TableColumn fx:id="tblUnitPrice" prefWidth="126.0" text="Unit Price" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="740.0" layoutY="208.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="829.0" layoutY="505.0" onAction="#btnBackOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -101,5 +101,56 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="829.0" layoutY="349.0" onAction="#btnDeleteOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-delete-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="829.0" layoutY="309.0" onAction="#btnUpdateOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-update-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="829.0" layoutY="267.0" onAction="#btnSaveOnAction" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-save-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="142.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtStockID" layoutX="142.0" layoutY="224.0" prefHeight="25.0" prefWidth="271.0" promptText="Stock ID" />
    </children>
 </AnchorPane>
