@@ -1,15 +1,21 @@
 package lk.gsbp.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.gsbp.db.DbConnection;
+import lk.gsbp.model.Stock;
+import lk.gsbp.model.tm.StockTm;
 import lk.gsbp.repository.StockRepo;
 
 import java.io.IOException;
@@ -17,9 +23,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class StockFormController {
 
+    public TableColumn tblStockId;
+    public TableColumn tblItemName;
+    public TableColumn tblQTY;
+    public TableView tblStock;
     @FXML
     private AnchorPane StockRoot;
 
@@ -33,19 +44,44 @@ public class StockFormController {
     private TextField txtQTY;
 
     @FXML
-    private TableColumn<?, ?> tblCostPrice;
-
-    @FXML
-    private TableColumn<?, ?> tblQTY;
-
-    @FXML
     private TableColumn<?, ?> tblCatagoryName;
 
     @FXML
-    private TableColumn<?, ?> tblSellingPrice;
-
-    @FXML
     private TextField txtItemName;
+
+    public void initialize() {
+        setCellValueFactory();
+        loadAllStocks();
+    }
+
+    private void loadAllStocks() {
+        ObservableList<StockTm> StockList = FXCollections.observableArrayList();
+
+        try {
+            List<Stock> stockList = StockRepo.getAll();
+
+            for (Stock stock : stockList) {
+                StockTm stockTm = new StockTm(
+                        stock.getStockId(),
+                        stock.getItemName(),
+                        stock.getCatogaryName(),
+                        stock.getQTY()
+                );
+                StockList.add(stockTm);
+                tblStock.setItems(StockList);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setCellValueFactory() {
+        tblStockId.setCellValueFactory(new PropertyValueFactory<>("StockId"));
+        tblItemName.setCellValueFactory(new PropertyValueFactory<>("ItemName"));
+        tblCatagoryName.setCellValueFactory(new PropertyValueFactory<>("CatogaryName"));
+        tblQTY.setCellValueFactory(new PropertyValueFactory<>("QTY"));
+
+    }
 
     @FXML
     void btnBackOnAction(ActionEvent event) throws IOException {

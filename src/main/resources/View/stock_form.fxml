@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.GaussianBlur?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="StockRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.StockFormController">
+<AnchorPane fx:id="StockRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.StockFormController">
    <children>
       <ImageView fitHeight="859.0" fitWidth="1589.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -140,12 +134,12 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <TableView layoutX="224.0" layoutY="493.0" prefHeight="312.0" prefWidth="973.0">
+      <TableView fx:id="tblStock" layoutX="224.0" layoutY="493.0" prefHeight="312.0" prefWidth="973.0">
         <columns>
-            <TableColumn fx:id="tblCostPrice" prefWidth="156.0" text="Stoke ID" />
-          <TableColumn fx:id="tblQTY" prefWidth="363.0" text="Item Name" />
+            <TableColumn fx:id="tblStockId" prefWidth="156.0" text="Stoke ID" />
+          <TableColumn fx:id="tblItemName" prefWidth="363.0" text="Item Name" />
           <TableColumn fx:id="tblCatagoryName" prefWidth="299.0" text="Catogary Name" />
-            <TableColumn fx:id="tblSellingPrice" prefWidth="154.0" text="QTY" />
+            <TableColumn fx:id="tblQTY" prefWidth="154.0" text="QTY" />
         </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="1284.0" layoutY="763.0" onAction="#btnBackOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
