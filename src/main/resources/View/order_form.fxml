@@ -73,7 +73,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <TableView layoutX="78.0" layoutY="328.0" prefHeight="200.0" prefWidth="683.0">
+      <TableView fx:id="tblOrderCart" layoutX="78.0" layoutY="328.0" prefHeight="200.0" prefWidth="683.0">
          <columns>
             <TableColumn fx:id="colItemID" minWidth="0.0" prefWidth="83.0" text="Item ID" />
             <TableColumn fx:id="colItemName" minWidth="0.0" prefWidth="200.0" text="Item Name" />
@@ -108,15 +108,6 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <TextField fx:id="txtDeliveryId" layoutX="707.0" layoutY="113.0" prefHeight="25.0" prefWidth="232.0" promptText="Delivery ID">
-         <effect>
-            <DropShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Text fill="WHITE" layoutX="707.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery ID" />
       <JFXButton buttonType="RAISED" layoutX="774.0" layoutY="397.0" onAction="#btnPlaceOrderOnAction" prefHeight="40.0" prefWidth="232.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Place Order" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
@@ -155,33 +146,51 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblOrderID" layoutX="412.0" layoutY="115.0" prefHeight="17.0" prefWidth="0.0" />
-      <Label fx:id="lblOrderDate" layoutX="573.0" layoutY="117.0" />
-      <Label fx:id="lblCustomerName" layoutX="78.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
-      <Text fill="WHITE" layoutX="461.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name" wrappingWidth="70.25393772125244">
+      <Label fx:id="lblOrderID" layoutX="412.0" layoutY="115.0" prefHeight="17.0" prefWidth="112.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblOrderDate" layoutX="573.0" layoutY="117.0" prefHeight="17.0" prefWidth="124.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblCustomerName" layoutX="78.0" layoutY="235.0" prefHeight="17.0" prefWidth="131.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Text fill="WHITE" layoutX="412.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name" wrappingWidth="70.25393772125244">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Label fx:id="lblItemName" layoutX="461.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
-      <Text fill="WHITE" layoutX="602.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" wrappingWidth="70.25393772125244">
+      <Label fx:id="lblItemName" layoutX="412.0" layoutY="239.0" prefHeight="17.0" prefWidth="131.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Text fill="WHITE" layoutX="558.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" wrappingWidth="70.25393772125244">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="703.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quentity On Hand" wrappingWidth="111.99999940395355">
+      <Text fill="WHITE" layoutX="662.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quentity On Hand" wrappingWidth="111.99999940395355">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Label fx:id="lblUnitPrice" layoutX="604.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
-      <Label fx:id="lblQuentityOnHand" layoutX="707.0" layoutY="235.0" prefHeight="17.0" prefWidth="0.0" />
-      <Text fill="WHITE" layoutX="859.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" wrappingWidth="27.999999403953552">
+      <Label fx:id="lblUnitPrice" layoutX="560.0" layoutY="239.0" prefHeight="17.0" prefWidth="91.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblQuentityOnHand" layoutX="666.0" layoutY="238.0" prefHeight="17.0" prefWidth="70.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Text fill="WHITE" layoutX="932.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" wrappingWidth="27.999999403953552">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="txtQTY" layoutX="853.0" layoutY="229.0" prefHeight="29.0" prefWidth="40.0">
+      <TextField fx:id="txtQTY" layoutX="926.0" layoutY="230.0" prefHeight="29.0" prefWidth="40.0">
          <effect>
             <DropShadow />
          </effect>
@@ -189,12 +198,12 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Text fill="WHITE" layoutX="275.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" wrappingWidth="70.25393772125244">
+      <Text fill="WHITE" layoutX="240.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID" wrappingWidth="70.25393772125244">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="cmbItemID" layoutX="276.0" layoutY="231.0" onAction="#cmbCustomerIdOnAction" prefHeight="25.0" prefWidth="140.0" promptText="Item ID" style="-jfx-unfocus-color: #ecf0f1; -jfx-focus-color: #ecf0f1;">
+      <JFXComboBox fx:id="cmbItemID" layoutX="241.0" layoutY="230.0" onAction="#cmbItemIdOnAction" prefHeight="25.0" prefWidth="140.0" promptText="Item ID" style="-jfx-unfocus-color: #ecf0f1; -jfx-focus-color: #ecf0f1;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -204,6 +213,19 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Label fx:id="lblNetTotal" layoutX="635.0" layoutY="543.0" prefHeight="17.0" prefWidth="0.0" />
+      <Label fx:id="lblNetTotal" layoutX="635.0" layoutY="543.0" prefHeight="17.0" prefWidth="131.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Text fill="WHITE" layoutX="792.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount" wrappingWidth="111.99999940395355">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblTotalAmount" layoutX="792.0" layoutY="231.0" prefHeight="17.0" prefWidth="112.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

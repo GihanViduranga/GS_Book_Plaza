@@ -41,7 +41,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="txtStokeId" layoutX="125.0" layoutY="125.0" prefHeight="25.0" prefWidth="287.0" promptText="Stocke ID">
+      <TextField fx:id="txtStokeId" layoutX="125.0" layoutY="125.0" onAction="#txtStockeSearchOnAction" prefHeight="25.0" prefWidth="287.0" promptText="Stocke ID">
          <effect>
             <DropShadow />
          </effect>

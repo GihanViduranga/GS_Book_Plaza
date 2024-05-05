@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,12 +19,17 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="503.0" prefWidth="1163.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.DashboardFormController">
    <children>
-      <ImageView fitHeight="779.0" fitWidth="1253.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="900.0" fitWidth="1900.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Icons/Abstract-Blue-Background-Graphics-23743402-1-580x386.jpg" />
+            <Image url="@../Icons/pexels-tirachard-kumtanom-733857.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="382.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="GS Book Plaza Dashboard" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a69bd" height="729.0" layoutX="47.0" layoutY="86.0" opacity="0.72" stroke="#4a69bd" strokeType="INSIDE" width="280.0">
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Rectangle>
+      <Text layoutX="355.0" layoutY="79.0" stroke="#355bbc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 55;" text="GS Book Plaza Dashboard" textAlignment="CENTER">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.29999999999999993">
                <stops>
@@ -35,7 +41,7 @@
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" height="71.775625" radius="36.03640625" width="74.37" />
          </effect></Text>
-      <Button layoutX="40.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Customer Management" textAlignment="RIGHT">
+      <Button layoutX="79.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Customer Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -47,7 +53,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="39.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 14;" text="Employee Management" textAlignment="RIGHT">
+      <Button layoutX="78.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 14;" text="Employee Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -59,7 +65,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="40.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Item Management" textAlignment="RIGHT">
+      <Button layoutX="78.0" layoutY="292.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Item Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -71,7 +77,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="39.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnStockOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Stock Management" textAlignment="RIGHT">
+      <Button layoutX="78.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnStockOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Stock Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -83,7 +89,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="39.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Supplier Management" textAlignment="RIGHT">
+      <Button layoutX="78.0" layoutY="427.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Supplier Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -95,7 +101,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="75.0" layoutY="684.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="147.0" style="-fx-background-color: #4a69bd;" text="Log out">
+      <Button layoutX="114.0" layoutY="709.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="147.0" style="-fx-background-color: #4a69bd;" text="Log out">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -107,16 +113,16 @@
             </ImageView>
          </graphic>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6a89cc" height="183.0" layoutX="380.0" layoutY="138.0" stroke="#6a89cc" strokeType="INSIDE" width="303.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6a89cc" height="183.0" layoutX="482.0" layoutY="136.0" stroke="#6a89cc" strokeType="INSIDE" width="303.0">
          <effect>
             <DropShadow />
          </effect></Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a69bd" height="100.0" layoutX="380.0" layoutY="221.0" stroke="#4a69bd" strokeType="INSIDE" width="303.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a69bd" height="100.0" layoutX="482.0" layoutY="219.0" stroke="#4a69bd" strokeType="INSIDE" width="303.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <Text fill="WHITE" layoutX="441.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" text="Customer Count">
+      <Text fill="WHITE" layoutX="543.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" text="Customer Count">
          <effect>
             <Bloom>
                <input>
@@ -124,16 +130,16 @@
                </input>
             </Bloom>
          </effect></Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6a89cc" height="183.0" layoutX="747.0" layoutY="138.0" stroke="#6a89cc" strokeType="INSIDE" width="303.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6a89cc" height="183.0" layoutX="849.0" layoutY="136.0" stroke="#6a89cc" strokeType="INSIDE" width="303.0">
          <effect>
             <DropShadow />
          </effect></Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a69bd" height="100.0" layoutX="747.0" layoutY="221.0" stroke="#4a69bd" strokeType="INSIDE" width="303.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a69bd" height="100.0" layoutX="849.0" layoutY="219.0" stroke="#4a69bd" strokeType="INSIDE" width="303.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <Text fill="WHITE" layoutX="835.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" text="Order Count">
+      <Text fill="WHITE" layoutX="934.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" text="Order Count">
          <effect>
             <DropShadow>
                <input>
@@ -141,7 +147,7 @@
                </input>
             </DropShadow>
          </effect></Text>
-      <Button layoutX="39.0" layoutY="479.0" mnemonicParsing="false" onAction="#btnDeliveryOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Delivery Management" textAlignment="RIGHT">
+      <Button layoutX="79.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnDeliveryOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Delivery Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -153,9 +159,9 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="lblCustomerCount" layoutX="518.0" layoutY="259.0" />
-      <Label fx:id="lblOrderCount" layoutX="882.0" layoutY="255.0" />
-      <BarChart fx:id="chrOrderProgress" layoutX="324.0" layoutY="349.0" prefHeight="355.0" prefWidth="754.0">
+      <Label fx:id="lblCustomerCount" layoutX="620.0" layoutY="257.0" />
+      <Label fx:id="lblOrderCount" layoutX="984.0" layoutY="253.0" />
+      <BarChart fx:id="chrOrderProgress" layoutX="406.0" layoutY="352.0" prefHeight="440.0" prefWidth="886.0" style="-fx-background-image: #3498db;">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -167,7 +173,7 @@
         </yAxis>
       </BarChart>
       <Text fill="WHITE" layoutX="655.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="Order Progerss" />
-      <Button layoutX="39.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnOrdersOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Orders Management" textAlignment="RIGHT">
+      <Button layoutX="78.0" layoutY="565.0" mnemonicParsing="false" onAction="#btnOrdersOnAction" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #4a69bd; -fx-font-size: 15;" text="Orders Management" textAlignment="RIGHT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -179,12 +185,12 @@
             </ImageView>
          </graphic>
       </Button>
-      <ImageView fitHeight="82.0" fitWidth="84.0" layoutX="400.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="82.0" fitWidth="84.0" layoutX="502.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/icons8-add-male-user-group-80.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="82.0" fitWidth="84.0" layoutX="776.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="82.0" fitWidth="84.0" layoutX="878.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/icons8-purchase-order-96.png" />
          </image>

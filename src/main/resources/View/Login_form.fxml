@@ -18,7 +18,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.LoginFormController">
    <children>
-      <ImageView fitHeight="698.0" fitWidth="985.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="854.0" fitWidth="1302.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMTYtYy0wMi1rc2g2cWt1Zy5qcGc.jpg" />
          </image>
@@ -26,14 +26,14 @@
             <GaussianBlur />
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23699a" height="541.0" layoutX="267.0" layoutY="40.0" opacity="0.2" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23699a" height="541.0" layoutX="433.0" layoutY="116.0" opacity="0.2" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <Text layoutX="366.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GS Book Plaza" textAlignment="CENTER" underline="true" wrappingWidth="218.74462890625">
+      <Text layoutX="511.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GS Book Plaza" textAlignment="CENTER" underline="true" wrappingWidth="258.74462890625">
          <font>
-            <Font name="Gabriola" size="48.0" />
+            <Font name="Gabriola" size="55.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="0.047619047619047616" startX="1.0" startY="1.0">
@@ -47,16 +47,16 @@
             <DropShadow />
          </effect>
       </Text>
-      <Text fill="WHITE" layoutX="320.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id">
+      <Text fill="WHITE" layoutX="486.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Text>
-      <Text fill="WHITE" layoutX="320.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Text fill="WHITE" layoutX="486.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Text>
-      <PasswordField fx:id="txtPassword" layoutX="320.0" layoutY="303.0" prefHeight="25.0" prefWidth="311.0" promptText="Password" />
-      <Button layoutX="384.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #fa983a; -fx-background-radius: #60a3bc;" text="Login" textFill="WHITE">
+      <PasswordField fx:id="txtPassword" layoutX="486.0" layoutY="379.0" prefHeight="25.0" prefWidth="311.0" promptText="Password" />
+      <Button layoutX="565.0" layoutY="460.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="34.0" prefWidth="153.0" style="-fx-background-color: #fa983a; -fx-background-radius: #60a3bc;" text="Login" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="22.0" />
          </font>
@@ -66,20 +66,22 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-login-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <TextField fx:id="txtUsername" layoutX="320.0" layoutY="228.0" prefHeight="25.0" prefWidth="311.0" promptText="User Id" />
-      <Text fill="WHITE" layoutX="375.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an Account?" wrappingWidth="152.625">
+      <TextField fx:id="txtUsername" layoutX="486.0" layoutY="304.0" prefHeight="25.0" prefWidth="311.0" promptText="User Id" />
+      <Text fill="WHITE" layoutX="531.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an Account?" wrappingWidth="159.625">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Text>
-      <Hyperlink layoutX="519.0" layoutY="467.0" onAction="#linkRegistrationOnAction" text="Register">
+      <Hyperlink layoutX="684.0" layoutY="543.0" onAction="#linkRegistrationOnAction" text="Register">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Hyperlink>
-      <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="392.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/icons8-login-96.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

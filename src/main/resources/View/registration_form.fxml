@@ -17,7 +17,7 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.RegistrationForm">
    <children>
-      <ImageView fitHeight="651.0" fitWidth="1192.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="859.0" fitWidth="1589.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMTYtYy0wMi1rc2g2cWt1Zy5qcGc.jpg" />
          </image>
@@ -25,19 +25,19 @@
             <GaussianBlur />
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23699a" height="541.0" layoutX="281.0" layoutY="55.0" opacity="0.2" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23699a" height="541.0" layoutX="437.0" layoutY="159.0" opacity="0.2" stroke="#0a3d62" strokeType="INSIDE" width="416.0">
          <effect>
             <DropShadow />
          </effect>
       </Rectangle>
-      <TextField fx:id="txtUserId" layoutX="336.0" layoutY="234.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID">
+      <TextField fx:id="txtUserId" layoutX="492.0" layoutY="338.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Text layoutX="319.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar To GS Book Plaza" underline="true">
+      <Text layoutX="475.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar To GS Book Plaza" underline="true">
          <font>
             <Font name="Gabriola" size="42.0" />
          </font>
@@ -53,33 +53,33 @@
             <DropShadow />
          </effect>
       </Text>
-      <Text fill="WHITE" layoutX="336.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
+      <Text fill="WHITE" layoutX="492.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Text>
-      <TextField fx:id="txtUsername" layoutX="336.0" layoutY="304.0" prefHeight="32.0" prefWidth="304.0" promptText="Username">
+      <TextField fx:id="txtUsername" layoutX="492.0" layoutY="408.0" prefHeight="32.0" prefWidth="304.0" promptText="Username">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Text fill="WHITE" layoutX="336.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+      <Text fill="WHITE" layoutX="492.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Text>
-      <Text fill="WHITE" layoutX="336.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Text fill="WHITE" layoutX="492.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Text>
-      <PasswordField fx:id="txtPassword" layoutX="336.0" layoutY="379.0" prefHeight="32.0" prefWidth="304.0" promptText="Password">
+      <PasswordField fx:id="txtPassword" layoutX="492.0" layoutY="483.0" prefHeight="32.0" prefWidth="304.0" promptText="Password">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></PasswordField>
-      <Button layoutX="395.0" layoutY="454.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="48.0" prefWidth="187.0" style="-fx-background-color: #fa983a;" text="  Registar" textFill="WHITE">
+      <Button layoutX="551.0" layoutY="558.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="48.0" prefWidth="187.0" style="-fx-background-color: #fa983a;" text="  Registar" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
@@ -89,11 +89,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-register-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="399.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/icons8-register-100.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
