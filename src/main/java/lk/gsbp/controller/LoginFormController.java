@@ -59,8 +59,13 @@ public class LoginFormController {
 
     }
 
-    private void navigateToDashboard() throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/View/dashboard_form.fxml"));
+    private void navigateToDashboard()  {
+        AnchorPane rootNode = null;
+        try {
+            rootNode = FXMLLoader.load(this.getClass().getResource("/View/dashboard_form.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         Scene scene = new Scene(rootNode);
 
@@ -72,8 +77,13 @@ public class LoginFormController {
     }
 
 
-    public void linkRegistrationOnAction(ActionEvent actionEvent) throws IOException {
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/View/registration_form.fxml"));
+    public void linkRegistrationOnAction(ActionEvent actionEvent)  {
+        Parent rootNode = null;
+        try {
+            rootNode = FXMLLoader.load(this.getClass().getResource("/View/registration_form.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();

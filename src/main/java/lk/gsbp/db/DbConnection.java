@@ -10,15 +10,19 @@ public class DbConnection {
 
     private DbConnection() throws SQLException {
         connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/gsbookplaza",
+                "jdbc:mysql://localhost:3306/GsBookPlaza",
                 "root",
                 "199884"
         );
     }
 
-    public static DbConnection getInstance() throws SQLException {
+    public static DbConnection getInstance() {
         if(dbConnection == null) {
-            dbConnection = new DbConnection();
+            try {
+                dbConnection = new DbConnection();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
         return dbConnection;
     }

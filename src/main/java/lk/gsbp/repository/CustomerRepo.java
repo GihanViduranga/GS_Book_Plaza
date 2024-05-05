@@ -35,14 +35,14 @@ public class CustomerRepo {
     public static List<String> getIds() throws SQLException {
         String sql = "SELECT CustomerId FROM customer";
 
+        Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         List<String> ids = new ArrayList<>();
 
         ResultSet resultSet = pstm.executeQuery();
         while (resultSet.next()) {
-            String CustomerId = resultSet.getNString(1);
-            ids.add(CustomerId);
+            ids.add(resultSet.getString(1));
         }
         return ids;
     }
@@ -76,4 +76,23 @@ public class CustomerRepo {
 
         return pstm.executeUpdate() > 0;
         }
+
+    public static Customer searchByCustomerId(String customerId) throws SQLException {
+        String sql = "SELECT * FROM customer WHERE CustomerId = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setString(1, customerId);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            return new Customer(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+            );
+        }
+        return null;
+    }
 }

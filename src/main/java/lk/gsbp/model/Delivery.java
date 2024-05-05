@@ -10,6 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 public class Delivery {
     private String DeliveryId;
+    private String DeliverName;
     private String Date;
     private String Address;
     private String Stetus;
