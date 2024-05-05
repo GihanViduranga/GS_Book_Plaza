@@ -36,23 +36,27 @@ public class DeliveryFormController {
     public TableColumn tblStetus;
     public TextField txtStatus;
     public TableView tblDelivery;
+    public TextField txtDeliverName;
+    public TableColumn tblDeliverName;
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException {
        String Id = txtDeliveryId.getText();
+       String Deliver = txtDeliverName.getText();
        String Date = txtDate.getText();
        String Address = txtAddress.getText();
        String Status = txtStatus.getText();
 
-       String sql = "INSERT INTO dilivery VALUES (?,?,?,?)";
+       String sql = "INSERT INTO Delivery VALUES (?,?,?,?,?)";
 
        try{
            Connection connection = DbConnection.getInstance().getConnection();
            PreparedStatement pstm = connection.prepareStatement(sql);
 
            pstm.setString(1,Id);
-           pstm.setString(2,Date);
-           pstm.setString(3,Address);
-           pstm.setString(4,Status);
+           pstm.setString(2,Deliver);
+           pstm.setString(3,Date);
+           pstm.setString(4,Address);
+           pstm.setString(5,Status);
 
            boolean isSaved = pstm.executeUpdate() > 0;
            if (isSaved) {
@@ -77,6 +81,7 @@ public class DeliveryFormController {
             for (Delivery delivery : deliveryList) {
                 DeliveryTm deliveryTm = new DeliveryTm(
                         delivery.getDeliveryId(),
+                        delivery.getDeliverName(),
                         delivery.getDate(),
                         delivery.getAddress(),
                         delivery.getStetus()
@@ -91,6 +96,7 @@ public class DeliveryFormController {
 
     private void setCellValueFactory() {
         tblDeliveryId.setCellValueFactory(new PropertyValueFactory<>("DeliveryId"));
+        tblDeliverName.setCellValueFactory(new PropertyValueFactory<>("DeliverName"));
         tblAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
         tblDate.setCellValueFactory(new PropertyValueFactory<>("Date"));
         tblStetus.setCellValueFactory(new PropertyValueFactory<>("Stetus"));
@@ -102,6 +108,7 @@ public class DeliveryFormController {
 
     private void clearFields() {
         txtDeliveryId.setText("");
+        txtDeliverName.setText("");
         txtDate.setText("");
         txtAddress.setText("");
         txtStatus.setText("");
@@ -109,14 +116,15 @@ public class DeliveryFormController {
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         String DeliveryId = txtDeliveryId.getText();
+        String DeliverName = txtDeliverName.getText();
         String Date = txtDate.getText();
         String Address = txtAddress.getText();
         String Stetus = txtStatus.getText();
 
-        String sql = "UPDATE dilivery SET Date =?, Address =?, Stetus =? WHERE DeliveryId =?";
+        String sql = "UPDATE Delivery SET DeliverName = ?, Date =?, Address =?, Stetus =? WHERE DeliveryId =?";
 
         try{
-            boolean isUpdate = DeliveryRepo.update2(DeliveryId, Date, Address, Stetus);
+            boolean isUpdate = DeliveryRepo.update2(DeliveryId, DeliverName, Date, Address, Stetus);
             if (isUpdate) {
                 new Alert(Alert.AlertType.INFORMATION, "Delivery Updated Successfully").show();
                 clearFields();
@@ -131,7 +139,7 @@ public class DeliveryFormController {
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
         String DeliveryId = txtDeliveryId.getText();
 
-        String sql = "DELETE FROM dilivery WHERE DiliveryId =?";
+        String sql = "DELETE FROM Delivery WHERE DeliveryId =?";
 
         try{
             Connection connection = DbConnection.getInstance().getConnection();
@@ -161,7 +169,7 @@ public class DeliveryFormController {
     public void txtDeliverySearchOnAction(ActionEvent actionEvent) throws SQLException {
         String DeliveryId = txtDeliveryId.getText();
 
-        String sql = "SELECT * FROM dilivery WHERE DiliveryId =?";
+        String sql = "SELECT * FROM Delivery WHERE DeliveryId =?";
 
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -171,10 +179,12 @@ public class DeliveryFormController {
 
             ResultSet resultSet = pstm.executeQuery();
             if (resultSet.next()) {
-                String Date = resultSet.getString(2);
-                String Address = resultSet.getString(3);
-                String Status = resultSet.getString(4);
+                String DeliverName = resultSet.getString(2);
+                String Date = resultSet.getString(3);
+                String Address = resultSet.getString(4);
+                String Status = resultSet.getString(5);
 
+                txtDeliverName.setText(DeliverName);
                 txtDate.setText(Date);
                 txtAddress.setText(Address);
                 txtStatus.setText(Status);
