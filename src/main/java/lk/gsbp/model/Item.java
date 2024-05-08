@@ -18,4 +18,12 @@ public class Item {
     private String StockId;
 //select itemId from Item where ItemName = " Atles CR 200";
 
+
+    public String getItemsId() {
+        return ItemsId;
+    }
+
+    public void setItemsId(String itemsId) {
+        ItemsId = itemsId;
+    }
 }

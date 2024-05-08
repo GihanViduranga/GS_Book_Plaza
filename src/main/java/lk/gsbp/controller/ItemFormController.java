@@ -17,11 +17,13 @@ import javafx.stage.Stage;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Customer;
 import lk.gsbp.model.Item;
+import lk.gsbp.model.Stock;
 import lk.gsbp.model.tm.CustomerTm;
 import lk.gsbp.model.tm.ItemTm;
 import lk.gsbp.repository.CustomerRepo;
 import lk.gsbp.repository.ItemRepo;
 
+import java.awt.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -61,12 +63,14 @@ public class ItemFormController {
         @FXML
         private TableColumn<?, ?> tblUnitPrice;
 
-        @FXML
-        private TextField txtStockID;
+       /* @FXML
+        private Label lblStockId;*/
+
 
     public void initialize() {
         setCellValueFactory();
         loadAllItems();
+
     }
 
     private void loadAllItems() {
@@ -116,7 +120,7 @@ public class ItemFormController {
         txtQTY.setText("");
         txtName.setText("");
         txtPrice.setText("");
-        txtStockID.setText("");
+        //lblStockId.setText("");
     }
 
         @FXML

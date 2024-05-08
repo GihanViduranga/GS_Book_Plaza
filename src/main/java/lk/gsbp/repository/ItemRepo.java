@@ -1,7 +1,9 @@
 package lk.gsbp.repository;
 
+import javafx.scene.control.Alert;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Item;
+import lk.gsbp.model.orderDetails;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,10 +34,10 @@ public class ItemRepo {
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
 
-        pstm.setString(1,ItemName);
-        pstm.setString(2,QTY);
-        pstm.setObject(3,UnitPrice);
-        pstm.setObject(4,ItemsId);
+        pstm.setString(1, ItemName);
+        pstm.setString(2, QTY);
+        pstm.setObject(3, UnitPrice);
+        pstm.setObject(4, ItemsId);
 
         return pstm.executeUpdate() > 0;
     }
@@ -96,4 +98,40 @@ public class ItemRepo {
         }
         return items;
     }
+
+    public static boolean update(List<orderDetails> odList) throws SQLException {
+        for (orderDetails od : odList) {
+            boolean isUpdateQty = updateQty(od.getItemId(), od.getQty());
+            if (!isUpdateQty) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean updateQty(String itemCode, int qty) throws SQLException {
+        System.out.println(qty);
+        String sql = "UPDATE items SET QTY = (QTY - ?) WHERE ItemsId = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setInt(1, qty);
+        pstm.setString(2, itemCode);
+
+        return pstm.executeUpdate() > 0;
+
+
+           /* pstm.setInt(1, qty);
+
+            pstm.setString(2, itemCode);
+
+
+            return pstm.executeUpdate() > 0;
+
+
+
+        System.out.println(sql);
+        return false;*/
+    }
+
 }
