@@ -158,14 +158,6 @@ public class CustomerFormController {
         }
     }
 
-    public void btnCusBackOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/View/dashboard_form.fxml"));
-        Stage stage = (Stage) root.getScene().getWindow();
-
-        stage.setScene(new Scene(rootNode));
-        stage.setTitle("Gs Book Plaza Dashboard");
-        stage.centerOnScreen();
-    }
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
         String id = txtCustomerId.getText();

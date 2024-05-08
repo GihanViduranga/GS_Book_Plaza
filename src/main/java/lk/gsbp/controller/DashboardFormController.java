@@ -3,6 +3,7 @@ package lk.gsbp.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.Label;
@@ -17,118 +18,129 @@ public class DashboardFormController {
     public Label lblOrderCount;
     public BarChart chrOrderProgress;
     @FXML
-    private AnchorPane rootNode;
+    public AnchorPane PerentrootNode;
+    public AnchorPane childRoot;
+
 
     public void btnCustomerOnAction(ActionEvent actionEvent) {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/customer_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/customer_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
-
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Customer Management Form");
-        stage.centerOnScreen();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
 
     public void btnEmployeeOnAction(ActionEvent actionEvent)  {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/employee_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/employee_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
-
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Employee Management Form");
-        stage.centerOnScreen();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
 
     public void btnItemOnAction(ActionEvent actionEvent)  {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/item_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/item_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
-
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Item Management Form");
-        stage.centerOnScreen();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
 
     public void btnStockOnAction(ActionEvent actionEvent) {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/stock_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/stock_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
-
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Item Management Form");
-        stage.centerOnScreen();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
 
     public void btnSupplierOnAction(ActionEvent actionEvent) {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/supplier_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/supplier_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
-
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Supplier Management Form");
-        stage.centerOnScreen();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
     public void btnDeliveryOnAction(ActionEvent actionEvent) {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/delivery_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/delivery_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
-
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Delivery Management Form");
-        stage.centerOnScreen();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
     public void btnLogoutOnAction(ActionEvent actionEvent) {
-        AnchorPane rootNode = null;
+        AnchorPane PerentrootNode = null;
         try {
-            rootNode = FXMLLoader.load(this.getClass().getResource("/View/Login_form.fxml"));
+            PerentrootNode = FXMLLoader.load(this.getClass().getResource("/View/Login_form.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        Scene scene = new Scene(rootNode);
+        Scene scene = new Scene(PerentrootNode);
 
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        Stage stage = (Stage) this.PerentrootNode.getScene().getWindow();
         stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("GS Book Plaza Login");
+        stage.setTitle("Login Form");
 
     }
 
     public void btnOrdersOnAction(ActionEvent actionEvent) {
-        AnchorPane anchorPane = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/order_form.fxml"));
+        Parent PerentrootNode = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/View/order_form.fxml"));
+            PerentrootNode = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage = (Stage) rootNode.getScene().getWindow();
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
+    }
 
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Order Management Form");
-        stage.centerOnScreen();
+    public void btnRegisterOnAction(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/registration_form.fxml"));
+        Parent PerentrootNode = null;
+        try {
+            PerentrootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
+    }
+
+    public void btnPaymentOnAction(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/payment_form.fxml"));
+        Parent PerentrootNode = null;
+        try {
+            PerentrootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        childRoot.getChildren().clear();
+        childRoot.getChildren().add(PerentrootNode);
     }
 }
