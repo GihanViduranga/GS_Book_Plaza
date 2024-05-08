@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="SupplierRootNode" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.SupplierFormController">
+<AnchorPane fx:id="SupplierRootNode" prefHeight="1011.0" prefWidth="1507.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.SupplierFormController">
    <children>
-      <ImageView fitHeight="859.0" fitWidth="1589.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1011.0" fitWidth="1527.0" pickOnBounds="true">
          <image>
             <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
@@ -25,9 +25,9 @@
             <GaussianBlur />
          </effect>
       </ImageView>
-      <Text layoutX="577.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Management" underline="true">
+      <Text layoutX="431.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Management" underline="true">
          <font>
-            <Font name="Gabriola" size="55.0" />
+            <Font name="Gabriola" size="100.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="0.46666666666666656" startX="1.0">
@@ -43,57 +43,69 @@
       </Text>
       <Text fill="WHITE" layoutX="131.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier ID">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="131.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="1098.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="629.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtSupplierID" layoutX="131.0" layoutY="187.0" onAction="#txtSupplierSearchOnAction" prefHeight="25.0" prefWidth="271.0" promptText="Supplier ID">
+      <TextField fx:id="txtSupplierID" layoutX="131.0" layoutY="187.0" onAction="#txtSupplierSearchOnAction" prefHeight="35.0" prefWidth="287.0" promptText="Supplier ID">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
-      <TextField fx:id="txtSupplierName" layoutX="131.0" layoutY="320.0" prefHeight="25.0" prefWidth="271.0" promptText="Supplier Name">
+      <TextField fx:id="txtSupplierName" layoutX="131.0" layoutY="320.0" prefHeight="35.0" prefWidth="287.0" promptText="Supplier Name">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
-      <TextField fx:id="txtContact" layoutX="1097.0" layoutY="188.0" prefHeight="25.0" prefWidth="271.0" promptText="Contact">
+      <TextField fx:id="txtContact" layoutX="1097.0" layoutY="188.0" prefHeight="35.0" prefWidth="287.0" promptText="Contact">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
-      <TextField fx:id="txtProduct" layoutX="629.0" layoutY="188.0" prefHeight="25.0" prefWidth="271.0" promptText="Product">
+      <TextField fx:id="txtProduct" layoutX="629.0" layoutY="188.0" prefHeight="35.0" prefWidth="287.0" promptText="Product">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
-      <TableView fx:id="tblSupplier" layoutX="131.0" layoutY="469.0" prefHeight="343.0" prefWidth="850.0">
+      <TableView fx:id="tblSupplier" layoutX="131.0" layoutY="469.0" prefHeight="468.0" prefWidth="850.0">
         <columns>
           <TableColumn fx:id="tblSupplierID" prefWidth="143.99996948242188" text="Supplier ID" />
           <TableColumn fx:id="tblSupplierName" prefWidth="253.0" text="Supplier Name" />
@@ -104,7 +116,7 @@
             <DropShadow />
          </effect>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="1019.0" layoutY="488.0" onAction="#btnSaveOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1131.0" layoutY="550.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -122,7 +134,7 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1275.0" layoutY="568.0" onAction="#btnClearOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1131.0" layoutY="635.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -140,7 +152,7 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1275.0" layoutY="488.0" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1131.0" layoutY="719.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -158,7 +170,7 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1019.0" layoutY="569.0" onAction="#btnDeleteOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1131.0" layoutY="806.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -176,61 +188,37 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1148.0" layoutY="729.0" onAction="#btnBackOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+      <Text fill="WHITE" layoutX="629.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Terms">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/icons8-back-100.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <DropShadow />
-         </effect>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="932.0" layoutY="186.0" onAction="#btnNewOnAction" style="-fx-background-color: #2ecc71;" text="New">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/icons8-add-100.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <Text fill="WHITE" layoutX="629.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Terms">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
       </Text>
-      <TextField fx:id="txtDeliveryTerms" layoutX="629.0" layoutY="319.0" prefHeight="25.0" prefWidth="271.0" promptText="Delivery Terms">
+      <TextField fx:id="txtDeliveryTerms" layoutX="629.0" layoutY="319.0" prefHeight="35.0" prefWidth="287.0" promptText="Delivery Terms">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
       <Text fill="WHITE" layoutX="1097.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Rating">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtSupplierRating" layoutX="1097.0" layoutY="318.0" prefHeight="25.0" prefWidth="271.0" promptText="Supplier Rating">
+      <TextField fx:id="txtSupplierRating" layoutX="1097.0" layoutY="318.0" prefHeight="35.0" prefWidth="287.0" promptText="Supplier Rating">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
    </children>
 </AnchorPane>

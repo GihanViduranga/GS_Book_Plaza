@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -15,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ItemRoot" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.ItemFormController">
+<AnchorPane fx:id="ItemRoot" prefHeight="1011.0" prefWidth="1507.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.ItemFormController">
    <children>
-      <ImageView fitHeight="859.0" fitWidth="1589.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1011.0" fitWidth="1589.0" layoutY="1.0" pickOnBounds="true">
          <image>
             <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
@@ -29,9 +30,9 @@
             </DropShadow>
          </effect>
       </ImageView>
-      <Text layoutX="609.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Management" underline="true">
+      <Text layoutX="488.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Management" underline="true">
          <font>
-            <Font name="Gabriola" size="55.0" />
+            <Font name="Gabriola" size="100.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.0619047619047619">
@@ -45,27 +46,39 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtId" layoutX="390.0" layoutY="189.0" onAction="#txtItemSearchOnAction" prefHeight="25.0" prefWidth="271.0" promptText="Item ID" />
-      <Text fill="WHITE" layoutX="390.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
+      <TextField fx:id="txtId" layoutX="365.0" layoutY="189.0" onAction="#txtItemSearchOnAction" prefHeight="35.0" prefWidth="287.0" promptText="Item ID">
          <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Text>
-      <TextField fx:id="txtQTY" layoutX="622.0" layoutY="359.0" prefHeight="25.0" prefWidth="271.0" promptText="QTY" />
-      <Text fill="WHITE" layoutX="622.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
+            <Font size="18.0" />
+         </font></TextField>
+      <Text fill="WHITE" layoutX="365.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtName" layoutX="869.0" layoutY="188.0" prefHeight="25.0" prefWidth="271.0" promptText="Name" />
-      <Text fill="WHITE" layoutX="869.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <TextField fx:id="txtQTY" layoutX="597.0" layoutY="359.0" prefHeight="35.0" prefWidth="287.0" promptText="QTY">
          <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Text>
-      <TextField fx:id="txtPrice" layoutX="1123.0" layoutY="360.0" prefHeight="25.0" prefWidth="271.0" promptText="Unit Price" />
-      <Text fill="WHITE" layoutX="1123.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
+            <Font size="18.0" />
+         </font></TextField>
+      <Text fill="WHITE" layoutX="597.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Text>
-      <JFXButton buttonType="RAISED" layoutX="1279.0" layoutY="672.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+      <TextField fx:id="txtName" layoutX="844.0" layoutY="188.0" prefHeight="35.0" prefWidth="287.0" promptText="Name">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Text fill="WHITE" layoutX="844.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Text>
+      <TextField fx:id="txtPrice" layoutX="1098.0" layoutY="360.0" prefHeight="35.0" prefWidth="287.0" promptText="Unit Price">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Text fill="WHITE" layoutX="1098.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Text>
+      <JFXButton buttonType="RAISED" layoutX="1252.0" layoutY="793.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -79,7 +92,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></JFXButton>
-      <TableView fx:id="tblItemTable" layoutX="189.0" layoutY="467.0" prefHeight="345.0" prefWidth="1025.0">
+      <TableView fx:id="tblItemTable" layoutX="167.0" layoutY="487.0" prefHeight="430.0" prefWidth="1025.0">
         <columns>
           <TableColumn fx:id="tblID" prefWidth="188.0" text="Item ID" />
           <TableColumn fx:id="tblName" prefWidth="352.0" text="Name" />
@@ -87,21 +100,7 @@
             <TableColumn fx:id="tblUnitPrice" prefWidth="263.0" text="Unit Price" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="1279.0" layoutY="768.0" onAction="#btnBackOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView fitHeight="28.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/icons8-back-100.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1279.0" layoutY="615.0" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1252.0" layoutY="715.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -116,7 +115,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1279.0" layoutY="557.0" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1252.0" layoutY="636.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -131,7 +130,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1279.0" layoutY="499.0" onAction="#btnSaveOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1252.0" layoutY="561.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -146,11 +145,15 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <Text fill="WHITE" layoutX="135.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock ID">
+      <Text fill="WHITE" layoutX="110.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock ID">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtStockID" layoutX="135.0" layoutY="358.0" prefHeight="25.0" prefWidth="271.0" promptText="Stock ID" />
+      <Label fx:id="lblStockId" layoutX="110.0" layoutY="360.0" prefHeight="39.0" prefWidth="287.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

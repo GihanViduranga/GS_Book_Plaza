@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="deliveryRootNode" prefHeight="522.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.DeliveryFormController">
+<AnchorPane fx:id="deliveryRootNode" prefHeight="1005.0" prefWidth="1507.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gsbp.controller.DeliveryFormController">
    <children>
-      <ImageView fitHeight="859.0" fitWidth="1589.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1005.0" fitWidth="1507.0" pickOnBounds="true">
          <image>
             <Image url="@../Icons/360_F_240635575_EJifwRAbKsVTDnA3QE0bCsWG5TLhUNEZ.jpg" />
          </image>
@@ -25,9 +25,9 @@
             <GaussianBlur />
          </effect>
       </ImageView>
-      <Text layoutX="515.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Management" textAlignment="CENTER" underline="true" wrappingWidth="535.283447265625">
+      <Text layoutX="405.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Management" textAlignment="CENTER" underline="true" wrappingWidth="766.283447265625">
          <font>
-            <Font name="Gabriola" size="55.0" />
+            <Font name="Gabriola" size="100.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="0.7571428571428571" startX="1.0">
@@ -41,37 +41,46 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtDeliveryId" layoutX="205.0" layoutY="183.0" onAction="#txtDeliverySearchOnAction" prefHeight="25.0" prefWidth="287.0" promptText="Delivery ID">
+      <TextField fx:id="txtDeliveryId" layoutX="195.0" layoutY="264.0" onAction="#txtDeliverySearchOnAction" prefHeight="25.0" prefWidth="287.0" promptText="Delivery ID">
          <effect>
             <DropShadow />
          </effect>
-      </TextField>
-      <Text fill="WHITE" layoutX="205.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery ID">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="195.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery ID">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtDate" layoutX="1036.0" layoutY="181.0" prefHeight="25.0" prefWidth="287.0" promptText="Date">
+      <TextField fx:id="txtDate" layoutX="1026.0" layoutY="262.0" prefHeight="25.0" prefWidth="287.0" promptText="Date">
          <effect>
             <DropShadow />
          </effect>
-      </TextField>
-      <Text fill="WHITE" layoutX="1036.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="1026.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtAddress" layoutX="626.0" layoutY="182.0" prefHeight="25.0" prefWidth="287.0" promptText="Address">
+      <TextField fx:id="txtAddress" layoutX="616.0" layoutY="263.0" prefHeight="25.0" prefWidth="287.0" promptText="Address">
          <effect>
             <DropShadow />
          </effect>
-      </TextField>
-      <Text fill="WHITE" layoutX="626.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="616.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TableView fx:id="tblDelivery" layoutX="137.0" layoutY="443.0" prefHeight="355.0" prefWidth="1057.0">
+      <TableView fx:id="tblDelivery" layoutX="141.0" layoutY="563.0" prefHeight="355.0" prefWidth="1057.0">
         <columns>
           <TableColumn fx:id="tblDeliveryId" prefWidth="131.0" text="Delivery ID" />
           <TableColumn fx:id="tblDeliverName" prefWidth="261.0" text="Deliver Name" />
@@ -83,17 +92,20 @@
             <DropShadow />
          </effect>
       </TableView>
-      <TextField fx:id="txtStatus" layoutX="919.0" layoutY="294.0" prefHeight="25.0" prefWidth="287.0" promptText="Stetus">
+      <TextField fx:id="txtStatus" layoutX="909.0" layoutY="375.0" prefHeight="25.0" prefWidth="287.0" promptText="Stetus">
          <effect>
             <DropShadow />
          </effect>
-      </TextField>
-      <Text fill="WHITE" layoutX="919.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stetus">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="909.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stetus">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <JFXButton buttonType="RAISED" layoutX="1287.0" layoutY="466.0" onAction="#btnSaveOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1244.0" layoutY="563.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
@@ -108,10 +120,10 @@
             </ImageView>
          </graphic>
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1287.0" layoutY="526.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1244.0" layoutY="665.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -129,7 +141,7 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1287.0" layoutY="578.0" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1244.0" layoutY="765.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -147,7 +159,7 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1287.0" layoutY="637.0" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1244.0" layoutY="868.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="228.0" style="-fx-background-color: #1e90ff;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -165,32 +177,17 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1287.0" layoutY="735.0" onAction="#btnBackOnAction" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: #1e90ff;" text="Back" textFill="WHITE">
+      <TextField fx:id="txtDeliverName" layoutX="394.0" layoutY="374.0" prefHeight="25.0" prefWidth="287.0" promptText="Deliver Name">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="394.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deliver Name">
          <font>
             <Font name="System Bold" size="18.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="24.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/icons8-back-100.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <DropShadow />
-         </effect>
-      </JFXButton>
-      <TextField fx:id="txtDeliverName" layoutX="404.0" layoutY="293.0" prefHeight="25.0" prefWidth="287.0" promptText="Deliver Name">
-         <effect>
-            <DropShadow />
-         </effect>
-      </TextField>
-      <Text fill="WHITE" layoutX="404.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deliver Name">
-         <font>
-            <Font name="System Bold" size="12.0" />
          </font>
       </Text>
    </children>
