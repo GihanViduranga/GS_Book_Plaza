@@ -119,19 +119,6 @@ public class ItemRepo {
         pstm.setString(2, itemCode);
 
         return pstm.executeUpdate() > 0;
-
-
-           /* pstm.setInt(1, qty);
-
-            pstm.setString(2, itemCode);
-
-
-            return pstm.executeUpdate() > 0;
-
-
-
-        System.out.println(sql);
-        return false;*/
     }
 
 }

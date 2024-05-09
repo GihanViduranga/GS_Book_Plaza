@@ -117,9 +117,6 @@ public class OrderFormController {
             throw new RuntimeException(e);
         }
     }
-
-
-    //-----------------------------------------------------------------------------------
     public static String generateNextAssestId() throws SQLException {
         Connection con = DbConnection.getInstance().getConnection();
 
@@ -151,9 +148,6 @@ public class OrderFormController {
         }
         return "O001";
     }
-    //-----------------------------------------------------------------------------------
-
-
 
     private void setItemID() {
         ObservableList<String> oblist = FXCollections.observableArrayList();
@@ -205,27 +199,17 @@ public class OrderFormController {
                 calculateNetTotal();
             }
 
-            /*if (type.orElse(no) == yes){
-                int selectIndex = tblOrderCart.getSelectionModel().getSelectedIndex();
-                obList.remove(selectIndex);
-
-                tblOrderCart.refresh();
-                calculateNetTotal();
-            }*/
         });
         if (!obList.isEmpty()){
             for (int i = 0; i < tblOrderCart.getItems().size(); i++){
                 if (ItemId.equals(colItemID.getCellData(i))) {
 
-                    //CartTm tm = obList.get(i);
-                    //QTY += tm.getQTY();
+
                     QTY = QTY + (int) colQTY.getCellData(i);
                     TotalPrice += QTY * UnitPrice;
 
-                    //tm.setQTY(QTY);
                     obList.get(i).setQTY(QTY);
                     obList.get(i).setTotalAmount(TotalPrice);
-                    //tm.setTotalAmount(TotalPrice);
 
                     tblOrderCart.refresh();
 
