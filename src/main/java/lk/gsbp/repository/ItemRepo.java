@@ -1,6 +1,5 @@
 package lk.gsbp.repository;
 
-import javafx.scene.control.Alert;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Item;
 import lk.gsbp.model.orderDetails;
@@ -14,7 +13,7 @@ import java.util.List;
 
 public class ItemRepo {
     public static boolean update(Item item) throws SQLException {
-        String sql = "UPDATE Items SET ItemName =?, QTY =?, UnitPrice =? WHERE ItemsId =?";
+        String sql = "UPDATE Items SET ItemName =?, QTY =?, UnitPrice =?,StockId =? WHERE ItemsId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -23,12 +22,13 @@ public class ItemRepo {
         pstm.setString(2, item.getQTY());
         pstm.setString(3, item.getUnitPrice());
         pstm.setString(4, item.getItemsId());
+        pstm.setString(5, item.getStockId());
 
         return pstm.executeUpdate() > 0;
     }
 
-    public static boolean Update2(String ItemsId, String ItemName, String QTY, String UnitPrice) throws SQLException {
-        String sql = "UPDATE Items SET ItemName =?, QTY =?, UnitPrice =? WHERE ItemsId =?";
+    public static boolean Update2(String ItemsId, String ItemName, String QTY, String UnitPrice, String stockId) throws SQLException {
+        String sql = "UPDATE Items SET ItemName =?, QTY =?, UnitPrice =?,StockId = ? WHERE ItemsId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -38,6 +38,7 @@ public class ItemRepo {
         pstm.setString(2, QTY);
         pstm.setObject(3, UnitPrice);
         pstm.setObject(4, ItemsId);
+        pstm.setObject(5, stockId);
 
         return pstm.executeUpdate() > 0;
     }
@@ -121,4 +122,16 @@ public class ItemRepo {
         return pstm.executeUpdate() > 0;
     }
 
+    public static String GetItemIds() throws SQLException {
+        String sql = "SELECT ItemsId FROM items ORDER BY ItemsId DESC LIMIT 1";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            String ItemId = resultSet.getString(1);
+            return ItemId;
+        }
+        return null;
+    }
 }

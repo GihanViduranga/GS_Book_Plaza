@@ -30,7 +30,7 @@
             <DropShadow />
          </effect>
       </Rectangle>
-      <TextField fx:id="txtUserId" layoutX="643.0" layoutY="388.0" prefHeight="32.0" prefWidth="304.0" promptText="User ID">
+      <TextField fx:id="txtUserId" layoutX="643.0" layoutY="388.0" onKeyReleased="#UserIdOnKeyReleased" prefHeight="32.0" prefWidth="304.0" promptText="User ID">
          <effect>
             <DropShadow />
          </effect>
@@ -60,7 +60,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtUsername" layoutX="642.0" layoutY="500.0" prefHeight="32.0" prefWidth="304.0" promptText="Username">
+      <TextField fx:id="txtUsername" layoutX="642.0" layoutY="500.0" onKeyReleased="#UsernameOnKeyRelesead" prefHeight="32.0" prefWidth="304.0" promptText="Username">
          <effect>
             <DropShadow />
          </effect>
@@ -78,7 +78,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <PasswordField fx:id="txtPassword" layoutX="642.0" layoutY="611.0" prefHeight="32.0" prefWidth="304.0" promptText="Password">
+      <PasswordField fx:id="txtPassword" layoutX="642.0" layoutY="611.0" onKeyReleased="#PasswoardOnKeyRelesead" prefHeight="32.0" prefWidth="304.0" promptText="Password">
          <effect>
             <DropShadow />
          </effect>

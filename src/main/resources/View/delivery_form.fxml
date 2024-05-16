@@ -41,7 +41,7 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtDeliveryId" layoutX="195.0" layoutY="264.0" onAction="#txtDeliverySearchOnAction" prefHeight="25.0" prefWidth="287.0" promptText="Delivery ID">
+      <TextField fx:id="txtDeliveryId" layoutX="195.0" layoutY="264.0" onAction="#txtDeliverySearchOnAction" onKeyReleased="#DeliveryIdOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Delivery ID">
          <effect>
             <DropShadow />
          </effect>
@@ -54,7 +54,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtDate" layoutX="1026.0" layoutY="262.0" prefHeight="25.0" prefWidth="287.0" promptText="Date">
+      <TextField fx:id="txtDate" layoutX="1026.0" layoutY="262.0" onKeyReleased="#DateOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Date">
          <effect>
             <DropShadow />
          </effect>
@@ -67,7 +67,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtAddress" layoutX="616.0" layoutY="263.0" prefHeight="25.0" prefWidth="287.0" promptText="Address">
+      <TextField fx:id="txtAddress" layoutX="616.0" layoutY="263.0" onKeyReleased="#AddressOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Address">
          <effect>
             <DropShadow />
          </effect>
@@ -92,7 +92,7 @@
             <DropShadow />
          </effect>
       </TableView>
-      <TextField fx:id="txtStatus" layoutX="909.0" layoutY="375.0" prefHeight="25.0" prefWidth="287.0" promptText="Stetus">
+      <TextField fx:id="txtStatus" layoutX="610.0" layoutY="365.0" prefHeight="25.0" prefWidth="287.0" promptText="Stetus">
          <effect>
             <DropShadow />
          </effect>
@@ -100,7 +100,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Text fill="WHITE" layoutX="909.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stetus">
+      <Text fill="WHITE" layoutX="610.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stetus">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -177,7 +177,7 @@
             <DropShadow />
          </effect>
       </JFXButton>
-      <TextField fx:id="txtDeliverName" layoutX="394.0" layoutY="374.0" prefHeight="25.0" prefWidth="287.0" promptText="Deliver Name">
+      <TextField fx:id="txtDeliverName" layoutX="195.0" layoutY="370.0" onKeyReleased="#DeliverNameOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Deliver Name">
          <effect>
             <DropShadow />
          </effect>
@@ -185,7 +185,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Text fill="WHITE" layoutX="394.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deliver Name">
+      <Text fill="WHITE" layoutX="195.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deliver Name">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

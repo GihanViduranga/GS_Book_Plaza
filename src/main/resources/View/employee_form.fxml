@@ -41,7 +41,7 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtID" layoutX="211.0" layoutY="206.0" onAction="#txtEmployeeIdOnAction" prefHeight="35.0" prefWidth="287.0" promptText="Employee ID">
+      <TextField fx:id="txtID" layoutX="211.0" layoutY="206.0" onAction="#txtEmployeeIdOnAction" onKeyReleased="#EmployeeOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Employee ID">
          <effect>
             <DropShadow />
          </effect>
@@ -52,7 +52,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtAddress" layoutX="211.0" layoutY="320.0" prefHeight="35.0" prefWidth="287.0" promptText="Address">
+      <TextField fx:id="txtAddress" layoutX="211.0" layoutY="320.0" onKeyReleased="#AddressOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Address">
          <effect>
             <DropShadow />
          </effect>
@@ -67,7 +67,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtName" layoutX="701.0" layoutY="207.0" prefHeight="35.0" prefWidth="287.0" promptText="Name">
+      <TextField fx:id="txtName" layoutX="701.0" layoutY="207.0" onKeyReleased="#NameOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Name">
          <effect>
             <DropShadow />
          </effect>
@@ -78,7 +78,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtContact" layoutX="701.0" layoutY="321.0" prefHeight="35.0" prefWidth="287.0" promptText="Contact">
+      <TextField fx:id="txtContact" layoutX="701.0" layoutY="321.0" onKeyReleased="#ContactOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Contact">
          <effect>
             <DropShadow />
          </effect>
@@ -100,7 +100,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtPosition" layoutX="211.0" layoutY="436.0" prefHeight="35.0" prefWidth="287.0" promptText="Position">
+      <TextField fx:id="txtPosition" layoutX="211.0" layoutY="436.0" onKeyReleased="#PositionOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Position">
          <effect>
             <DropShadow />
          </effect>
@@ -181,7 +181,7 @@
             <DropShadow />
          </effect>
       </TableView>
-      <TextField fx:id="txtJobStartDate" layoutX="1161.0" layoutY="209.0" prefHeight="35.0" prefWidth="287.0" promptText="Job Start Date">
+      <TextField fx:id="txtJobStartDate" layoutX="1161.0" layoutY="209.0" onKeyReleased="#DateOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Job Start Date">
          <effect>
             <DropShadow />
          </effect>

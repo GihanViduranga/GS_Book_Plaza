@@ -184,7 +184,7 @@ public class OrderFormController {
         int TotalPrice = QTY * UnitPrice;
         JFXButton Action = new JFXButton("Remove");
         Action.setCursor(Cursor.HAND);
-        System.out.println(TotalPrice);
+
 
         Action.setOnAction((e) -> {
             ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
@@ -230,7 +230,6 @@ public class OrderFormController {
     private void calculateNetTotal() {
         double netTotal = 0.0;
         for (int i = 0; i <tblOrderCart.getItems().size(); i++) {
-            System.out.println( colTotalPrice.getCellData(i));
             netTotal = netTotal + (double) colTotalPrice.getCellData(i);
         }
         lblNetTotal.setText(String.valueOf(netTotal));
@@ -251,8 +250,9 @@ public class OrderFormController {
         String orderId = lblOrderID.getText();
         String orderDate = lblOrderDate.getText();
         String customerId = cmbCustomerID.getValue();
+        double netTotal = Double.parseDouble(lblNetTotal.getText());
 
-        var order = new Order(orderId, orderDate, customerId);
+        var order = new Order(orderId, orderDate, customerId,netTotal);
 
         List<orderDetails> odList = new ArrayList<>();
 
@@ -268,7 +268,7 @@ public class OrderFormController {
         }
         PlaceOrder po = new PlaceOrder(order, odList);
         boolean isPlaceOrder = PlaceOrderRepo.placeOrder(po);
-        System.out.println(isPlaceOrder);
+
         if(isPlaceOrder){
             new Alert(Alert.AlertType.CONFIRMATION, "Order pleased").show();
         } else {

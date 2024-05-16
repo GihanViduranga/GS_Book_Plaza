@@ -42,7 +42,7 @@
             <DropShadow height="16.43" radius="6.5725" width="11.86" />
          </effect>
       </Text>
-      <TextField fx:id="txtCustomerId" layoutX="142.0" layoutY="238.0" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="287.0" promptText="Customer ID">
+      <TextField fx:id="txtCustomerId" layoutX="142.0" layoutY="238.0" onAction="#txtSearchOnAction" onKeyReleased="#CustomerIdOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Customer ID">
          <effect>
             <DropShadow />
          </effect>
@@ -60,7 +60,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtCustomerAddress" layoutX="1076.0" layoutY="236.0" prefHeight="35.0" prefWidth="287.0" promptText="Customer Address">
+      <TextField fx:id="txtCustomerAddress" layoutX="1076.0" layoutY="236.0" onKeyReleased="#CustomerAddressOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Customer Address">
          <effect>
             <DropShadow />
          </effect>
@@ -72,11 +72,11 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <Text fill="WHITE" layoutX="828.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Contact">
+      <Text fill="WHITE" layoutX="603.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Contact">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtCustomerContact" layoutX="828.0" layoutY="381.0" prefHeight="35.0" prefWidth="287.0" promptText="Customer Contact">
+      <TextField fx:id="txtCustomerContact" layoutX="603.0" layoutY="390.0" onKeyReleased="#CustomerContactOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Customer Contact">
          <effect>
             <DropShadow />
          </effect>
@@ -84,7 +84,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerName" layoutX="603.0" layoutY="236.0" prefHeight="35.0" prefWidth="287.0" promptText="Customer Name">
+      <TextField fx:id="txtCustomerName" layoutX="603.0" layoutY="236.0" onKeyReleased="#CustomerNameOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Customer Name">
          <effect>
             <DropShadow />
          </effect>
@@ -96,11 +96,11 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <Text fill="WHITE" layoutX="363.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Email">
+      <Text fill="WHITE" layoutX="142.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Email">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtCustomerEmail" layoutX="363.0" layoutY="379.0" prefHeight="35.0" prefWidth="287.0" promptText="Customer Email">
+      <TextField fx:id="txtCustomerEmail" layoutX="142.0" layoutY="378.0" onKeyReleased="#CustomerEmailOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Customer Email">
          <effect>
             <DropShadow />
          </effect>

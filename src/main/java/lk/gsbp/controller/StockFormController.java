@@ -11,11 +11,17 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.gsbp.Utill.Regex;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Stock;
+import lk.gsbp.model.stockDetails;
 import lk.gsbp.model.tm.StockTm;
+import lk.gsbp.repository.PlaceStock;
+import lk.gsbp.repository.PlaceStockRepo;
+import lk.gsbp.repository.StockDetailRepo;
 import lk.gsbp.repository.StockRepo;
 
 import java.io.IOException;
@@ -23,7 +29,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class StockFormController {
 
@@ -49,7 +57,7 @@ public class StockFormController {
     @FXML
     private TextField txtItemName;
 
-    public void initialize() {
+    public void initialize()  {
         setCellValueFactory();
         loadAllStocks();
     }
@@ -128,11 +136,11 @@ public class StockFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) throws SQLException {
+        if (isValied()){
         String stockId = txtStokeId.getText();
         String itemName = txtItemName.getText();
         String catogaryName = txtCatogaryName.getText();
         String QTY = txtQTY.getText();
-
 
         String sql = "INSERT INTO Stock VALUES (?,?,?,?)";
 
@@ -152,6 +160,13 @@ public class StockFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Validation Error");
+            alert.setHeaderText("Validation Failed");
+            alert.setContentText("Please fill in all fields correctly.");
+            alert.showAndWait();
         }
     }
 
@@ -203,5 +218,29 @@ public class StockFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.INFORMATION, "Stock Id not found").show();
         }
+    }
+
+    public boolean isValied(){
+        boolean idValid = Regex.setTextColor(lk.gsbp.Utill.TextField.IDS, txtStokeId);
+        boolean nameValid = Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtItemName);
+        boolean catogaryValid = Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtCatogaryName);
+        boolean QTYValid = Regex.setTextColor(lk.gsbp.Utill.TextField.QTY, txtQTY);
+
+        return idValid && nameValid && catogaryValid && QTYValid;
+    }
+    public void StockIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.IDS, txtStokeId);
+    }
+
+    public void CatagaryNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtCatogaryName);
+    }
+
+    public void QtyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.QTY, txtQTY);
+    }
+
+    public void NameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtItemName);
     }
 }

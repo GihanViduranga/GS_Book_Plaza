@@ -2,7 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -46,15 +46,15 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtId" layoutX="365.0" layoutY="189.0" onAction="#txtItemSearchOnAction" prefHeight="35.0" prefWidth="287.0" promptText="Item ID">
+      <TextField fx:id="txtId" layoutX="167.0" layoutY="184.0" onAction="#txtItemSearchOnAction" onKeyReleased="#ItemIdOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Item ID">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Text fill="WHITE" layoutX="365.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
+      <Text fill="WHITE" layoutX="167.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtQTY" layoutX="597.0" layoutY="359.0" prefHeight="35.0" prefWidth="287.0" promptText="QTY">
+      <TextField fx:id="txtQTY" layoutX="597.0" layoutY="359.0" onKeyReleased="#QTYOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="QTY">
          <font>
             <Font size="18.0" />
          </font></TextField>
@@ -62,19 +62,19 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtName" layoutX="844.0" layoutY="188.0" prefHeight="35.0" prefWidth="287.0" promptText="Name">
+      <TextField fx:id="txtName" layoutX="597.0" layoutY="180.0" onKeyPressed="#NameOnKeyReleased" prefHeight="35.0" prefWidth="287.0" promptText="Name">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Text fill="WHITE" layoutX="844.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <Text fill="WHITE" layoutX="597.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
-      <TextField fx:id="txtPrice" layoutX="1098.0" layoutY="360.0" prefHeight="35.0" prefWidth="287.0" promptText="Unit Price">
+      <TextField fx:id="txtPrice" layoutX="1039.0" layoutY="176.0" prefHeight="35.0" prefWidth="287.0" promptText="Unit Price">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Text fill="WHITE" layoutX="1098.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
+      <Text fill="WHITE" layoutX="1039.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
@@ -145,15 +145,18 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <Text fill="WHITE" layoutX="110.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock ID">
+      <Text fill="WHITE" layoutX="167.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock ID">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Label fx:id="lblStockId" layoutX="110.0" layoutY="360.0" prefHeight="39.0" prefWidth="287.0" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <ComboBox fx:id="cmbStocId" layoutX="167.0" layoutY="359.0" onAction="#cmbStockIdOnAction" prefHeight="39.0" prefWidth="287.0" promptText="Stock ID">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
    </children>
 </AnchorPane>

@@ -10,8 +10,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.gsbp.Utill.Regex;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Customer;
 import lk.gsbp.model.tm.CustomerTm;
@@ -42,30 +44,38 @@ public class CustomerFormController {
 
 
     public void btnCusSaveOnAction(ActionEvent actionEvent) {
-        String id = txtCustomerId.getText();
-        String name = txtCustomerName.getText();
-        String address = txtCustomerAddress.getText();
-        String contact = txtCustomerContact.getText();
-        String email = txtCustomerEmail.getText();
+        if (isValied()) {
+            String id = txtCustomerId.getText();
+            String name = txtCustomerName.getText();
+            String address = txtCustomerAddress.getText();
+            String contact = txtCustomerContact.getText();
+            String email = txtCustomerEmail.getText();
 
-        String sql = "INSERT INTO customer Values(?,?,?,?,?)";
+            String sql = "INSERT INTO customer Values(?,?,?,?,?)";
 
-        try {
-            Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement(sql);
+            try {
+                Connection connection = DbConnection.getInstance().getConnection();
+                PreparedStatement pstm = connection.prepareStatement(sql);
 
-            pstm.setString(1,id);
-            pstm.setString(2,name);
-            pstm.setString(3,address);
-            pstm.setString(4,contact);
-            pstm.setString(5,email);
+                pstm.setString(1, id);
+                pstm.setString(2, name);
+                pstm.setString(3, address);
+                pstm.setString(4, contact);
+                pstm.setString(5, email);
 
-            boolean isSaved = pstm.executeUpdate() > 0;
-            if (isSaved) {
-                new Alert(Alert.AlertType.INFORMATION, "Customer Saved Successfully").show();
+                boolean isSaved = pstm.executeUpdate() > 0;
+                if (isSaved) {
+                    new Alert(Alert.AlertType.INFORMATION, "Customer Saved Successfully").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Validation Error");
+            alert.setHeaderText("Validation Failed");
+            alert.setContentText("Please fill in all fields correctly.");
+            alert.showAndWait();
         }
     }
     public void initialize() {
@@ -187,5 +197,34 @@ public class CustomerFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.INFORMATION,"Customer ID Not Found!").show();
         }
+    }
+
+    public boolean isValied(){
+        boolean IdValid = Regex.setTextColor(lk.gsbp.Utill.TextField.IDC, txtCustomerId);
+        boolean nameValid = Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtCustomerName);
+        boolean addressValid = Regex.setTextColor(lk.gsbp.Utill.TextField.ADDRESS, txtCustomerAddress);
+        boolean contactValid = Regex.setTextColor(lk.gsbp.Utill.TextField.CONTACT, txtCustomerContact);
+        boolean emailValid = Regex.setTextColor(lk.gsbp.Utill.TextField.EMAIL, txtCustomerEmail);
+
+        return IdValid && nameValid && addressValid && contactValid && emailValid;
+    }
+    public void CustomerIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.IDC, txtCustomerId);
+    }
+
+    public void CustomerAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.ADDRESS, txtCustomerAddress);
+    }
+
+    public void CustomerContactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.CONTACT, txtCustomerContact);
+    }
+
+    public void CustomerNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtCustomerName);
+    }
+
+    public void CustomerEmailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.EMAIL, txtCustomerEmail);
     }
 }

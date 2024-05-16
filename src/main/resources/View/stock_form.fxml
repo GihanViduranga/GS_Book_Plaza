@@ -41,7 +41,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="txtStokeId" layoutX="234.0" layoutY="226.0" onAction="#txtStockeSearchOnAction" prefHeight="25.0" prefWidth="287.0" promptText="Stocke ID">
+      <TextField fx:id="txtStokeId" layoutX="234.0" layoutY="226.0" onAction="#txtStockeSearchOnAction" onKeyReleased="#StockIdOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Stocke ID">
          <effect>
             <DropShadow />
          </effect>
@@ -49,7 +49,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCatogaryName" layoutX="234.0" layoutY="407.0" prefHeight="25.0" prefWidth="287.0" promptText="Catogary Name">
+      <TextField fx:id="txtCatogaryName" layoutX="234.0" layoutY="407.0" onKeyReleased="#CatagaryNameOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Catogary Name">
          <effect>
             <DropShadow />
          </effect>
@@ -57,7 +57,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtQTY" layoutX="860.0" layoutY="408.0" prefHeight="25.0" prefWidth="287.0" promptText="QTY">
+      <TextField fx:id="txtQTY" layoutX="860.0" layoutY="408.0" onKeyReleased="#QtyOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="QTY">
          <effect>
             <DropShadow />
          </effect>
@@ -157,7 +157,7 @@
             <TableColumn fx:id="tblQTY" prefWidth="154.0" text="QTY" />
         </columns>
       </TableView>
-      <TextField fx:id="txtItemName" layoutX="860.0" layoutY="225.0" prefHeight="25.0" prefWidth="287.0" promptText="Item Name">
+      <TextField fx:id="txtItemName" layoutX="860.0" layoutY="225.0" onKeyReleased="#NameOnKeyReleased" prefHeight="25.0" prefWidth="287.0" promptText="Item Name">
          <effect>
             <DropShadow />
          </effect>

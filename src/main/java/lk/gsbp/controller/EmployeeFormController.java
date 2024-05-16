@@ -10,8 +10,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.gsbp.Utill.Regex;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Employee;
 import lk.gsbp.model.tm.EmployeeTm;
@@ -82,6 +84,7 @@ public class EmployeeFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if (isValied()){
         String id = txtID.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
@@ -111,6 +114,13 @@ public class EmployeeFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Validation Error");
+            alert.setHeaderText("Validation Failed");
+            alert.setContentText("Please fill in all fields correctly.");
+            alert.showAndWait();
         }
     }
 
@@ -213,5 +223,39 @@ public class EmployeeFormController {
         } catch (SQLException e){
             new Alert(Alert.AlertType.INFORMATION,"Employee ID Not Found!").show();
         }
+    }
+    public boolean isValied(){
+
+        boolean idValid = Regex.setTextColor(lk.gsbp.Utill.TextField.IDE, txtID);
+        boolean nameValid = Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtName);
+        boolean addressValid = Regex.setTextColor(lk.gsbp.Utill.TextField.ADDRESS, txtAddress);
+        boolean contactValid = Regex.setTextColor(lk.gsbp.Utill.TextField.CONTACT, txtContact);
+        boolean positionValid = Regex.setTextColor(lk.gsbp.Utill.TextField.POSITION, txtPosition);
+        boolean jobStartDateValid = Regex.setTextColor(lk.gsbp.Utill.TextField.DATE, txtJobStartDate);
+
+        return idValid && nameValid && addressValid && contactValid && positionValid && jobStartDateValid;
+    }
+    public void EmployeeOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.IDE, txtID);
+    }
+
+    public void AddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.ADDRESS, txtAddress);
+    }
+
+    public void NameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtName);
+    }
+
+    public void ContactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.CONTACT, txtContact);
+    }
+
+    public void PositionOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.POSITION, txtPosition);
+    }
+
+    public void DateOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.DATE, txtJobStartDate);
     }
 }

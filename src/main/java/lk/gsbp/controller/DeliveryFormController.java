@@ -10,8 +10,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.gsbp.Utill.Regex;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Delivery;
 import lk.gsbp.model.tm.DeliveryTm;
@@ -40,32 +42,40 @@ public class DeliveryFormController {
     public TableColumn tblDeliverName;
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException {
-       String Id = txtDeliveryId.getText();
-       String Deliver = txtDeliverName.getText();
-       String Date = txtDate.getText();
-       String Address = txtAddress.getText();
-       String Status = txtStatus.getText();
+        if (isValied()) {
+            String Id = txtDeliveryId.getText();
+            String Deliver = txtDeliverName.getText();
+            String Date = txtDate.getText();
+            String Address = txtAddress.getText();
+            String Status = txtStatus.getText();
 
-       String sql = "INSERT INTO Delivery VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO Delivery VALUES (?,?,?,?,?)";
 
-       try{
-           Connection connection = DbConnection.getInstance().getConnection();
-           PreparedStatement pstm = connection.prepareStatement(sql);
+            try {
+                Connection connection = DbConnection.getInstance().getConnection();
+                PreparedStatement pstm = connection.prepareStatement(sql);
 
-           pstm.setString(1,Id);
-           pstm.setString(2,Deliver);
-           pstm.setString(3,Date);
-           pstm.setString(4,Address);
-           pstm.setString(5,Status);
+                pstm.setString(1, Id);
+                pstm.setString(2, Deliver);
+                pstm.setString(3, Date);
+                pstm.setString(4, Address);
+                pstm.setString(5, Status);
 
-           boolean isSaved = pstm.executeUpdate() > 0;
-           if (isSaved) {
-               new Alert(Alert.AlertType.INFORMATION, "Delivery Saved Successfully").show();
-               clearFields();
-           }
-       }   catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-       }
+                boolean isSaved = pstm.executeUpdate() > 0;
+                if (isSaved) {
+                    new Alert(Alert.AlertType.INFORMATION, "Delivery Saved Successfully").show();
+                    clearFields();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Validation Error");
+            alert.setHeaderText("Validation Failed");
+            alert.setContentText("Please fill in all fields correctly.");
+            alert.showAndWait();
+        }
     }
     public void initialize() {
         setCellValueFactory();
@@ -194,5 +204,30 @@ public class DeliveryFormController {
         } catch (SQLException e){
             new Alert(Alert.AlertType.INFORMATION, "Delivery ID Not Found").show();
         }
+    }
+
+    public boolean isValied(){
+
+        boolean nameValid = Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtDeliverName);
+        boolean idValid = Regex.setTextColor(lk.gsbp.Utill.TextField.IDD, txtDeliveryId);
+        boolean AddressValid = Regex.setTextColor(lk.gsbp.Utill.TextField.ADDRESS, txtAddress );
+        boolean dateValid = Regex.setTextColor(lk.gsbp.Utill.TextField.DATE, txtDate);
+
+        return nameValid && idValid && AddressValid && dateValid;
+    }
+    public void DateOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.DATE, txtDate);
+    }
+
+    public void AddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.ADDRESS, txtAddress);
+    }
+
+    public void DeliveryIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.IDD, txtDeliveryId);
+    }
+
+    public void DeliverNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtDeliverName);
     }
 }

@@ -7,13 +7,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.gsbp.Utill.Regex;
 import lk.gsbp.db.DbConnection;
 import lk.gsbp.model.Customer;
 import lk.gsbp.model.Item;
@@ -22,6 +22,8 @@ import lk.gsbp.model.tm.CustomerTm;
 import lk.gsbp.model.tm.ItemTm;
 import lk.gsbp.repository.CustomerRepo;
 import lk.gsbp.repository.ItemRepo;
+import lk.gsbp.repository.OrderRepo;
+import lk.gsbp.repository.StockRepo;
 
 import java.awt.*;
 import java.io.IOException;
@@ -33,6 +35,8 @@ import java.util.List;
 
 public class ItemFormController {
 
+        @FXML
+        public ComboBox <String> cmbStocId;
         @FXML
         private AnchorPane ItemRoot;
 
@@ -70,7 +74,8 @@ public class ItemFormController {
     public void initialize() {
         setCellValueFactory();
         loadAllItems();
-
+        setStockId();
+        getCurrentOrderId();
     }
 
     private void loadAllItems() {
@@ -120,7 +125,6 @@ public class ItemFormController {
         txtQTY.setText("");
         txtName.setText("");
         txtPrice.setText("");
-        //lblStockId.setText("");
     }
 
         @FXML
@@ -148,12 +152,14 @@ public class ItemFormController {
 
         @FXML
         void btnSaveOnAction(ActionEvent event) {
+            if (isValied()){
             String id = txtId.getText();
             String qty = txtQTY.getText();
             String name = txtName.getText();
             String price = txtPrice.getText();
+            String stockId = cmbStocId.getSelectionModel().getSelectedItem();
 
-            String sql = "INSERT INTO Items (ItemsId,ItemName,QTY,UnitPrice) VALUES(?,?,?,?)";
+            String sql = "INSERT INTO Items (ItemsId,ItemName,QTY,UnitPrice,StockId) VALUES(?,?,?,?,?)";
 
             try{
                 Connection connection = DbConnection.getInstance().getConnection();
@@ -163,6 +169,8 @@ public class ItemFormController {
                 pstm.setString(2,name);
                 pstm.setString(3,qty);
                 pstm.setString(4,price);
+                pstm.setString(5,stockId);
+
 
                 boolean isSaved = pstm.executeUpdate() > 0;
                 if (isSaved){
@@ -172,7 +180,13 @@ public class ItemFormController {
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-
+            }else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Validation Error");
+                alert.setHeaderText("Validation Failed");
+                alert.setContentText("Please fill in all fields correctly.");
+                alert.showAndWait();
+            }
         }
 
         @FXML
@@ -181,11 +195,12 @@ public class ItemFormController {
             String Name = txtName.getText();
             String Qty = txtQTY.getText();
             String Price = txtPrice.getText();
+            String stockId = cmbStocId.getSelectionModel().getSelectedItem();
 
             String sql = "UPDATE items SET ItemName =?, QTY =?, UnitPrice =? WHERE ItemsId =?";
 
             try {
-                boolean isUpdate = ItemRepo.Update2(Id, Name, Qty, Price);
+                boolean isUpdate = ItemRepo.Update2(Id, Name, Qty, Price,stockId);
                 if (isUpdate) {
                     new Alert(Alert.AlertType.INFORMATION, "Item updated").show();
                 } else {
@@ -226,5 +241,93 @@ public class ItemFormController {
             }
 
         }
+    public boolean isValied(){
+        boolean idValid = Regex.setTextColor(lk.gsbp.Utill.TextField.IDI, txtId);
+        boolean nameValid = Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtName);
+        boolean qtyValid = Regex.setTextColor(lk.gsbp.Utill.TextField.QTY, txtQTY);
+
+        return idValid && nameValid && qtyValid;
 
     }
+
+    public void ItemIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.IDI, txtId);
+    }
+
+    public void QTYOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.QTY, txtQTY);
+    }
+
+    public void NameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.gsbp.Utill.TextField.NAME, txtName);
+    }
+
+    public void cmbStockIdOnAction(ActionEvent actionEvent) {
+        String id = cmbStocId.getValue();
+
+        try {
+            Stock stock = StockRepo.searchById(id);
+            if (stock != null) {
+                txtName.setText(stock.getItemName());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void setStockId() {
+        ObservableList<String> StockIdList = FXCollections.observableArrayList();
+
+        try {
+            List<String> stockList = StockRepo.getAllStock();
+
+            for (String stock : stockList) {
+                StockIdList.add(stock);
+            }
+            cmbStocId.setItems(StockIdList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void getCurrentOrderId() {
+        try {
+            String itemId = ItemRepo.GetItemIds();
+
+            String nextItemId = generateNextAssestId();
+            txtId.setText(nextItemId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static String generateNextAssestId() throws SQLException {
+        Connection con = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT ItemsId FROM items ORDER BY ItemsId DESC LIMIT 1";
+
+        ResultSet resultSet = con.createStatement().executeQuery(sql);
+        if(resultSet.next()) {
+            return splitItemId(resultSet.getString(1));
+        }
+        return splitItemId(null);
+    }
+
+    private static String splitItemId(String string) {
+        if(string != null) {
+            String[] strings = string.split("I0");
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            String ID = String.valueOf(id);
+            int length = ID.length();
+            if (length < 2){
+                return "I00"+id;
+            }else {
+                if (length < 3){
+                    return "I0"+id;
+                }else {
+                    return "I"+id;
+                }
+            }
+        }
+        return "I001";
+    }
+}

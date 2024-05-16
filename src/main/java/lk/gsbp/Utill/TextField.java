@@ -1,0 +1,5 @@
+package lk.gsbp.Utill;
+
+public enum TextField {
+    AdminID,Username,Password, IDA, NAME, PASSWORD,IDC,ADDRESS,CONTACT,EMAIL,IDCS, DESCRIPTION, DATE, STATUS, IDD, AMOUNT, METHOD, IDP, PRODUCT, IDS, POSITION, IDE, DOUBLE,QTY,IDI
+}

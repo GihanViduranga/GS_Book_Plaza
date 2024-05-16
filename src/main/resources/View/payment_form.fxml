@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -42,7 +43,7 @@
             <DropShadow />
          </effect>
       </Text>
-      <TextField fx:id="txtPaymentId" layoutX="300.0" layoutY="276.0" onAction="#txtPaymentSearchOnAction" prefHeight="35.0" prefWidth="287.0" promptText="Payment ID">
+      <TextField fx:id="txtPaymentId" layoutX="300.0" layoutY="276.0" onAction="#txtPaymentSearchOnAction" onKeyReleased="#PaymentIDOnKeyRelesed" prefHeight="35.0" prefWidth="287.0" promptText="Payment ID">
          <font>
             <Font size="18.0" />
          </font>
@@ -55,7 +56,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtPaymentMethod" layoutX="964.0" layoutY="271.0" prefHeight="35.0" prefWidth="287.0" promptText="Payment Method">
+      <TextField fx:id="txtPaymentMethod" layoutX="967.0" layoutY="275.0" onKeyReleased="#MethodeOnKeyRelesed" prefHeight="35.0" prefWidth="287.0" promptText="Payment Method">
          <font>
             <Font size="18.0" />
          </font>
@@ -63,7 +64,7 @@
             <DropShadow />
          </effect>
       </TextField>
-      <Text fill="WHITE" layoutX="964.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method">
+      <Text fill="WHITE" layoutX="967.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -73,7 +74,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtPayment" layoutX="967.0" layoutY="441.0" prefHeight="35.0" prefWidth="287.0" promptText="Payment">
+      <TextField fx:id="txtPayment" layoutX="967.0" layoutY="441.0" onKeyReleased="#PaymentOnKeyRelesed" prefHeight="35.0" prefWidth="287.0" promptText="Payment">
          <font>
             <Font size="18.0" />
          </font>
@@ -86,7 +87,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <JFXButton buttonType="RAISED" layoutX="1205.0" layoutY="662.0" onAction="#btnPayClearOnAction" prefHeight="50.0" prefWidth="228.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="1205.0" layoutY="707.0" onAction="#btnPayClearOnAction" prefHeight="50.0" prefWidth="228.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Clear" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -141,5 +142,36 @@
             <DropShadow />
          </effect>
       </Label>
+      <JFXButton buttonType="RAISED" layoutX="1205.0" layoutY="624.0" onAction="#btnPaySaveOnAction" prefHeight="50.0" prefWidth="228.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-save-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="628.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbOrderId" layoutX="628.0" layoutY="276.0" onAction="#cmbOrderIdOnAction" prefHeight="39.0" prefWidth="287.0" promptText="Order ID">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
    </children>
 </AnchorPane>

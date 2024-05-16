@@ -20,6 +20,8 @@ import java.sql.SQLException;
 
 public class LoginFormController {
     public AnchorPane rootNode;
+    public TextField txtUsernameJ;
+    public TextField txtPasswordj;
     @FXML
     private PasswordField txtPassword;
 
@@ -28,8 +30,8 @@ public class LoginFormController {
 
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
-        String username = txtUsername.getText();
-        String password = txtPassword.getText();
+        String username = txtUsernameJ.getText();
+        String password = txtPasswordj.getText();
 
         try {
             checkCredentials(username, password);
@@ -51,7 +53,7 @@ public class LoginFormController {
             if (password.equals(Password)) {
                 navigateToDashboard();
             } else {
-               new Alert(Alert.AlertType.ERROR,"Sorry! password is incorrect try again").show();
+                new Alert(Alert.AlertType.ERROR,"Sorry! password is incorrect try again").show();
             }
         }else{
             new Alert(Alert.AlertType.INFORMATION,"Sorry! username Can't be find").show();

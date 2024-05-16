@@ -14,8 +14,12 @@ public class Launcher extends Application {
         launch(args);
     }
     @Override
-    public void start(Stage stage) throws IOException {
-        stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/View/dashboard_form.fxml"))));
+    public void start(Stage stage) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("/View/Login_form.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         stage.setTitle("GS Book Plaza Login");
         stage.centerOnScreen();
         stage.show();
