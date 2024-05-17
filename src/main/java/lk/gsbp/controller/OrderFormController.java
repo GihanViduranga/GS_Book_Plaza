@@ -20,6 +20,10 @@ import lk.gsbp.model.Order;
 import lk.gsbp.model.tm.CartTm;
 import lk.gsbp.repository.*;
 import lk.gsbp.model.orderDetails;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 
 import java.io.IOException;
@@ -27,9 +31,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class OrderFormController {
     @FXML
@@ -246,13 +248,15 @@ public class OrderFormController {
     }
 
     @FXML
-    void btnPlaceOrderOnAction(ActionEvent event) throws SQLException {
+    void btnPlaceOrderOnAction(ActionEvent event) throws SQLException, JRException {
         String orderId = lblOrderID.getText();
         String orderDate = lblOrderDate.getText();
         String customerId = cmbCustomerID.getValue();
-        double netTotal = Double.parseDouble(lblNetTotal.getText());
+        double total = Double.parseDouble(lblNetTotal.getText());
 
-        var order = new Order(orderId, orderDate, customerId,netTotal);
+        System.out.println(total);
+
+        var order = new Order(orderId, orderDate, customerId, total);
 
         List<orderDetails> odList = new ArrayList<>();
 
@@ -271,6 +275,7 @@ public class OrderFormController {
 
         if(isPlaceOrder){
             new Alert(Alert.AlertType.CONFIRMATION, "Order pleased").show();
+            PrintBill();
         } else {
             new Alert(Alert.AlertType.ERROR, "Order pleased Unsuccessful").show();
         }
@@ -326,5 +331,25 @@ public class OrderFormController {
     private void SetDate(){
         LocalDate Date = LocalDate.now();
         lblOrderDate.setText(String.valueOf(Date));
+    }
+    public void setTotal() {
+
+    }
+
+    public void btnBillOnAction(ActionEvent actionEvent) throws JRException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/Reports/OrderReportFoeFinal.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("OrderId", lblOrderID.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(jasperReport, data, DbConnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint,false);
+
+    }
+
+    public void PrintBill() throws JRException, SQLException {
+
     }
 }

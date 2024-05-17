@@ -1,0 +1,148 @@
+
+CREATE DATABASE GsBookPlaza;
+USE GsBookPlaza;
+
+
+
+create table admin
+(
+    AdminId  varchar(20) not null
+        primary key,
+    Username varchar(10) null,
+    Password varchar(10) null
+);
+
+create table customer
+(
+    CustomerId varchar(20) not null
+        primary key,
+    Name       varchar(20) null,
+    Address    varchar(50) null,
+    Contact    varchar(15) null,
+    Email      varchar(20) null
+);
+
+
+create table delivery
+(
+    DeliveryId  varchar(20) not null
+        primary key,
+    DeliverName varchar(20) null,
+    Date        varchar(20) null,
+    Address     varchar(50) null,
+    Stetus      varchar(75) null
+);
+
+create table employee
+(
+    EmployeeId varchar(20) not null
+        primary key,
+    AdminId    varchar(20) null,
+    Name       varchar(20) null,
+    Address    varchar(50) null,
+    Contact    varchar(15) null,
+    Date       varchar(15) null,
+    Position   varchar(15) null,
+    Salary     varchar(15) null,
+    constraint employee_ibfk_1
+        foreign key (AdminId) references admin (AdminId)
+);
+
+create index AdminId
+    on employee (AdminId);
+
+create table items
+(
+    ItemsId   varchar(20) not null
+        primary key,
+    ItemName  varchar(25) null,
+    QTY       varchar(15) null,
+    UnitPrice varchar(15) null,
+    StockId   varchar(20) null,
+    constraint items_ibfk_1
+        foreign key (StockId) references stock (StockId)
+);
+
+create index StockId
+    on items (StockId);
+
+create table orderdetails
+(
+    ItemsId     varchar(20)   null,
+    OrderId     varchar(20)   null,
+    qty         int           null,
+    unitPrice   double(10, 2) null,
+    TotalAmount double(10, 2) null,
+    constraint orderdetails_ibfk_1
+        foreign key (ItemsId) references items (ItemsId),
+    constraint orderdetails_ibfk_2
+        foreign key (OrderId) references orders (OrderId)
+);
+
+create index ItemsId
+    on orderdetails (ItemsId);
+
+create index OrderId
+    on orderdetails (OrderId);
+
+create table orders
+(
+    OrderId    varchar(20) not null
+        primary key,
+    Date       varchar(15) null,
+    CustomerId varchar(20) null,
+    NetTotal   double      null,
+    constraint orders_ibfk_1
+        foreign key (CustomerId) references customer (CustomerId)
+);
+
+create index CustomerId
+    on orders (CustomerId);
+
+create table payment
+(
+    PaymentId     varchar(20) not null
+        primary key,
+    PaymentMethod varchar(20) null,
+    Date          varchar(20) null,
+    Payment       varchar(25) null
+);
+
+create table stock
+(
+    StockId      varchar(20) not null
+        primary key,
+    ItemName     varchar(20) null,
+    CatogaryName varchar(20) null,
+    QTY          varchar(15) null
+);
+
+create table stockdetails
+(
+    SupplierId varchar(20) null,
+    StockId    varchar(20) null,
+    QTY        varchar(15) null,
+    constraint stockdetails_ibfk_1
+        foreign key (SupplierId) references supplier (SupplierId),
+    constraint stockdetails_ibfk_2
+        foreign key (StockId) references stock (StockId)
+);
+
+create index StockId
+    on stockdetails (StockId);
+
+create index SupplierId
+    on stockdetails (SupplierId);
+
+create table supplier
+(
+    SupplierId varchar(20) not null
+        primary key,
+    Name       varchar(25) null,
+    Contact    varchar(15) null,
+    Products   varchar(75) null,
+    ItemName   varchar(25) null,
+    Qty        varchar(25) null
+);
+
+

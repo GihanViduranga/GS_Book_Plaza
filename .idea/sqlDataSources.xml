@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="ddabfc32-e644-4a3d-93be-53b01e67b12d" />
+          <option name="name" value="DDL data source" />
+          <option name="dbmsName" value="MYSQL" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/src/main/resources" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

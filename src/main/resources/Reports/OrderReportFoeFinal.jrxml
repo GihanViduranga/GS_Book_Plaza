@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrderReportFoeFinal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45fa0e27-a397-440d-b445-8ee46e8fe53d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     gsbookplaza.orders.`OrderId` ,
+     gsbookplaza.orders.`Date`, 
+     gsbookplaza.orders.`NetTotal` ,
+    gsbookplaza.orderdetails.`ItemsId` ,
+     gsbookplaza.orderdetails.qty ,
+     gsbookplaza.orderdetails.`unitPrice` ,
+     gsbookplaza.orderdetails.`TotalAmount` ,
+     gsbookplaza.items.`ItemName` 
+FROM
+    gsbookplaza.orders 
+JOIN
+      gsbookplaza.orderdetails ON  gsbookplaza.orders.`OrderId`  =  gsbookplaza.orderdetails.`OrderId` 
+LEFT JOIN
+      gsbookplaza.customer  ON  gsbookplaza.orders.`CustomerId`  = gsbookplaza.customer.`CustomerId` 
+JOIN
+     gsbookplaza.items  ON   gsbookplaza.orderdetails.`ItemsId` =  gsbookplaza.items.`ItemsId` ]]>
+	</queryString>
+	<field name="OrderId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OrderId"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="Date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="NetTotal" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="NetTotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="NetTotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="ItemsId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ItemsId"/>
+		<property name="com.jaspersoft.studio.field.label" value="ItemsId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetails"/>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetails"/>
+	</field>
+	<field name="unitPrice" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="unitPrice"/>
+		<property name="com.jaspersoft.studio.field.label" value="unitPrice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetails"/>
+	</field>
+	<field name="TotalAmount" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="TotalAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="TotalAmount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetails"/>
+	</field>
+	<field name="ItemName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ItemName"/>
+		<property name="com.jaspersoft.studio.field.label" value="ItemName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="items"/>
+	</field>
+	<group name="OrderId">
+		<groupExpression><![CDATA[$F{OrderId}]]></groupExpression>
+	</group>
+	<group name="Date">
+		<groupExpression><![CDATA[$F{Date}]]></groupExpression>
+	</group>
+	<group name="NetTotal">
+		<groupExpression><![CDATA[$F{NetTotal}]]></groupExpression>
+	</group>
+	<group name="ItemsId">
+		<groupExpression><![CDATA[$F{ItemsId}]]></groupExpression>
+	</group>
+	<group name="qty">
+		<groupExpression><![CDATA[$F{qty}]]></groupExpression>
+	</group>
+	<group name="unitPrice">
+		<groupExpression><![CDATA[$F{unitPrice}]]></groupExpression>
+	</group>
+	<group name="TotalAmount">
+		<groupExpression><![CDATA[$F{TotalAmount}]]></groupExpression>
+	</group>
+	<group name="ItemName">
+		<groupExpression><![CDATA[$F{ItemName}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

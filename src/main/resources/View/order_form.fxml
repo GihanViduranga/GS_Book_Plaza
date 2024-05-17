@@ -209,5 +209,23 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <JFXButton buttonType="RAISED" layoutX="1153.0" layoutY="896.0" onAction="#btnBillOnAction" prefHeight="40.0" prefWidth="232.0" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Bill" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/icons8-purchase-order-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
